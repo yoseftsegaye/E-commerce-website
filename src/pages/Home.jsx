@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const Home = () => {
@@ -9,10 +10,12 @@ const Home = () => {
     };
 
     return (
-        <div className="flex flex-row w-full mt-20 lg:px-[2%] md:px-[5%]">
+        <div className="flex flex-row w-full mt-20 mb-4 px-[2%] md:px-[5%]">
+
             {/* Side menu bar */}
-            <div className="w-10 lg:w-[233px] h-[344px] lg:h-auto pr-1 lg:pr-4 pt-10 border-r border-black/50 relative">
-                <div className="hidden lg:flex flex-col items-start w-[217px] h-[344px] gap-4">
+            <div className={`relative ${open ? "w-[233px] h-fit pt-[3%]" : "w-10 h-auto"} lg:w-[233px] lg:h-auto pr-1 lg:pr-4 lg:pt-10`}>
+                {/* Sidebar content */}
+                <div className={`${open ? "flex" : "hidden"} flex-col items-start gap-4 w-[217px] h-[344px] lg:flex lg:h-auto`}>
                     <div className="flex flex-row items-center justify-between w-full">
                         <button className="font-normal text-base hover:text-[#DB4444]">Women's Fashion</button>
                         <button>
@@ -34,45 +37,20 @@ const Home = () => {
                     <button className="font-normal text-base hover:text-[#DB4444]">Health & Beauty</button>
                 </div>
 
-                {/* Sidebar menu */}
-                <div className="relative w-full h-full">
+                {/* Sidebar expand button */}
+                <div className="absolute bottom-1 right-2 flex items-center justify-center z-[10] lg:hidden">
                     <button
-                        className="flex items-center justify-center w-8 h-5 rounded-xl bg-[#f19393] hover:bg-[#DB4444] text-white bottom-0 right-0 lg:hidden absolute"
+                        className="flex items-center justify-center w-8 h-5 rounded-xl bg-[#f19393] hover:bg-[#DB4444] text-white"
                         onClick={() => setOpen(!open)}
                     >
-                        {open ? '<<' : '>>'}
+                        {open ? "<<" : ">>"}
                     </button>
-                </div>
-
-
-
-                {/* Side menu list */}
-                <div className={`absolute flex flex-col items-start w-[217px] h-[344px] gap-4 top-0 left-0 pt-[3%] text-black shadow-md transition-transform transform duration-500 ${open ? 'translate-x-0' : '-translate-x-full'
-                    } lg:hidden`}>
-                    <div className="flex flex-row items-center justify-between w-full">
-                        <button className="font-normal text-base hover:text-[#DB4444]">Women's Fashion</button>
-                        <button>
-                            <img src="/Home/DropDown.png" alt="DropDown" className="w-2 h-3" />
-                        </button>
-                    </div>
-                    <div className="flex flex-row items-center justify-between w-full">
-                        <button className="font-normal text-base hover:text-[#DB4444]">Men's Fashion</button>
-                        <button>
-                            <img src="/Home/DropDown.png" alt="DropDown" className="w-2 h-3" />
-                        </button>
-                    </div>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Electronics</button>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Home & Lifestyle</button>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Medicine</button>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Sport & Outdoor</button>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Baby's & Toys</button>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Groceries & pets</button>
-                    <button className="font-normal text-base hover:text-[#DB4444]">Health & Beauty</button>
                 </div>
             </div>
 
             {/* Front image */}
-            <div className="w-full h-auto pl-[3%] pt-[3%]" onClick={handleCloseDetail}>
+            <div className={`w-full h-auto pl-[3%] pt-[3%] transition-transform duration-300 border-l border-black/50`}
+                onClick={handleCloseDetail}>
                 <div className="relative flex flex-row justify-center md:justify-between w-full h-full bg-black md:pl-4 lg:pl-16">
                     {/* Description section */}
                     <div className="hidden md:flex flex-col w-[300px] gap-8 py-10 left-0">
@@ -135,13 +113,9 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
 export default Home;
-
-
-
-
 
