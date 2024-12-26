@@ -118,6 +118,11 @@ const Home = () => {
             </div >
 
             <Todays />
+
+            <div className="w-full px-[2%] md:px-[5%] mb-5">
+                <div className=' w-full border-b-[3px] border-black/10'></div>
+            </div>
+
         </div>
     );
 };

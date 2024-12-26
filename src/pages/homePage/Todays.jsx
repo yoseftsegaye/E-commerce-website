@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Countdown from 'react-countdown';
 import { Products } from '../../Samples/Products';
+
+const ITEM_WIDTH = 270;
 
 // Star Rating Component
 const StarRating = ({ totalStars = 5, onRatingChange }) => {
@@ -65,11 +67,22 @@ const CountdownTimer = () => {
 
 const Todays = () => {
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const containerRef = useRef();
     const sample = Products;
 
     const [likedProduct, setLikedProduct] = useState({});
     const [seenProduct, setSeenProduct] = useState({});
     const [displayedCount, setDisplayedCount] = useState(0); // Tracks the number of product displayed.
+
+    // Function to handle scrolling when the button is clicked
+    const handleScroll = (scrollAmount) => {
+        const newScrollPosition = scrollPosition + scrollAmount; // calculate the new scroll position.
+        setScrollPosition(newScrollPosition); // update the state with the new scroll postion.
+
+        // Access the container element and set its scrollLeft property.
+        containerRef.current.scrollLeft = newScrollPosition;
+    };
 
     const toggleLike = (productId) => {
         setLikedProduct((prev) => ({
@@ -111,80 +124,35 @@ const Todays = () => {
 
                         {/* Side arrows */}
                         <div className='absolute bottom-0 right-0 flex flex-row mb-2 w-auto gap-2'>
-                            <div className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]'>
+                            <button className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]' onClick={() => { handleScroll(-ITEM_WIDTH) }}>
                                 <div className='flex items-center justify-center w-full h-full rounded-full bg-[#F5F5F5] hover:bg-slate-300'>
                                     <img src="/Home/LeftArrow.png" alt="LeftArrow" className='w-3 h-2.5 md:w-4 md:h-[14px]' />
                                 </div>
-                            </div>
-                            <div className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]'>
+                            </button>
+                            <button className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]' onClick={() => { handleScroll(ITEM_WIDTH) }}>
                                 <div className='flex items-center justify-center w-full h-full rounded-full bg-[#F5F5F5] hover:bg-slate-300'>
                                     <img src="/Home/RightArrow.png" alt="RightArrow" className='w-3 h-2.5 md:w-4 md:h-[14px]' />
                                 </div>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {/* Show lists */}
-                <div className='w-full flex flex-row gap-6 mb-2'>
-                    {sample.slice(0, 10).map((product) => (
-                        <div key={product.id} className='w-fit h-fit flex flex-col gap-4'>
-                            {/* Image */}
-                            <div className='w-[270px] h-[250px] flex items-center justify-center bg-[#F5F5F5] rounded-md relative group'>
-                                <div className='w-[180px] h-[170px] flex items-center justify-center'>
-                                    <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
-                                </div>
-                                <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
-                                    <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${likedProduct[product.id] ? "bg-red-500" : "bg-white"
-                                        }`}>
-                                        <button onClick={() => toggleLike(product.id)}>
-                                            <img src="/Navbar/Like.png" alt="Heart" className='w-5 h-4' />
-                                        </button>
-                                    </div>
-                                    <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${seenProduct[product.id] ? "bg-red-500" : "bg-white"
-                                        }`}>
-                                        <button onClick={() => toggleSeen(product.id)}>
-                                            <img src="/Navbar/Seen.png" alt="Eye" className='w-5 h-4' />
-                                        </button>
-                                    </div>
-                                </div>
-                                {/* Discount price */}
-                                <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
-                                    <p className='text-sm font-normal text-white'>{product.discount}</p>
-                                </div>
-                                <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                    <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
-                                        Add To Cart
-                                    </button>
-                                </div>
-                            </div>
+                <div ref={containerRef}
+                    style={{
+                        width: "100%",
+                        overflowX: "scroll",
+                        scrollBehavior: "smooth"
+                    }} className='mb-5'>
+                    <div className='w-full flex flex-row gap-6 mb-4'>
+                        {sample.slice(0, 10).map((product) => (
+                            <div
+                                key={product.id}
+                                className='w-fit h-fit flex flex-col gap-4'>
 
-                            {/* Detail */}
-                            <div className='w-52 h-[84px] flex flex-col gap-2'>
-                                <h1 className='text-base font-medium'>{product.name}</h1>
-                                <div className='flex flex-row items-center gap-3'>
-                                    <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
-                                    <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
-                                </div>
-                                <div className='flex flex-row items-center gap-2'>
-                                    {/* Star rating */}
-                                    <div className='flex flex-row items-center'>
-                                        <StarRating totalStars={5} />
-                                    </div>
-                                    <p className='text-sm font-semibold text-black opacity-50'> ({product.starRating}) </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* See More */}
-                <div className="w-full pr-[2%] md:pr-[5%]">
-                    <div className='w-full flex flex-wrap justify-center gap-6 mb-2'>
-                        {sample.slice(0, displayedCount).map((product) => (
-                            <div key={product.id} className='w-fit h-fit flex flex-col gap-4 rou'>
                                 {/* Image */}
-                                <div className='w-[270px] h-[250px] flex items-center justify-center rounded-md bg-[#F5F5F5] group relative'>
+                                <div className='w-[270px] h-[250px] flex items-center justify-center bg-[#F5F5F5] rounded-md hover:scale-105 ease-in-out duration-300 relative group'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
                                     </div>
@@ -214,8 +182,63 @@ const Todays = () => {
                                 </div>
 
                                 {/* Detail */}
-                                <div className='w-52 h-[84px] flex flex-col gap-2'>
-                                    <h1 className='text-base font-medium'>{product.name}</h1>
+                                <div className='w-52 h-[84px] flex flex-col gap-2 pl-1'>
+                                    <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
+                                    <div className='flex flex-row items-center gap-3'>
+                                        <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
+                                        <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
+                                    </div>
+                                    <div className='flex flex-row items-center gap-2'>
+                                        {/* Star rating */}
+                                        <div className='flex flex-row items-center'>
+                                            <StarRating totalStars={5} />
+                                        </div>
+                                        <p className='text-sm font-semibold text-black opacity-50'> ({product.starRating}) </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* See More */}
+                <div className="w-full pr-[2%] md:pr-[5%]">
+                    <div className='w-full flex flex-wrap justify-center gap-6 mb-2'>
+                        {sample.slice(0, displayedCount).map((product) => (
+                            <div key={product.id} className='w-fit h-fit flex flex-col gap-4 rou'>
+                                {/* Image */}
+                                <div className='w-[270px] h-[250px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                                    <div className='w-[180px] h-[170px] flex items-center justify-center'>
+                                        <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
+                                    </div>
+                                    <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
+                                        <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${likedProduct[product.id] ? "bg-red-500" : "bg-white"
+                                            }`}>
+                                            <button onClick={() => toggleLike(product.id)}>
+                                                <img src="/Navbar/Like.png" alt="Heart" className='w-5 h-4' />
+                                            </button>
+                                        </div>
+                                        <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${seenProduct[product.id] ? "bg-red-500" : "bg-white"
+                                            }`}>
+                                            <button onClick={() => toggleSeen(product.id)}>
+                                                <img src="/Navbar/Seen.png" alt="Eye" className='w-5 h-4' />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    {/* Discount price */}
+                                    <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
+                                        <p className='text-sm font-normal text-white'>{product.discount}</p>
+                                    </div>
+                                    <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                        <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                            Add To Cart
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Detail */}
+                                <div className='w-52 h-[84px] flex flex-col gap-2 pl-1'>
+                                    <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
                                         <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
                                         <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
@@ -238,7 +261,7 @@ const Todays = () => {
                     {displayedCount < sample.length && (
                         <button
                             onClick={handleExploreMore}
-                            className="w-[234px] h-14 rounded-md bg-[#DB4444] text-base font-medium text-white m-10 hover:bg-[#f19393]"
+                            className="w-[234px] h-14 rounded-md bg-[#DB4444] text-base font-medium text-white hover:bg-[#f19393]"
                         >
                             View All Products
                         </button>
@@ -250,7 +273,5 @@ const Todays = () => {
 };
 
 export default Todays;
-
-
 
 
