@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import Todays from './homePage/Todays';
+import Catagories from './homePage/Catagories';
 
 const Home = () => {
     const [detail, setDetail] = useState(true);
@@ -119,7 +120,13 @@ const Home = () => {
 
             <Todays />
 
-            <div className="w-full px-[2%] md:px-[5%] mb-5">
+            <div className="w-full px-[2%] md:px-[5%]">
+                <div className=' w-full border-b-[3px] border-black/10'></div>
+            </div>
+
+            <Catagories />
+
+            <div className="w-full px-[2%] md:px-[5%] mb-10">
                 <div className=' w-full border-b-[3px] border-black/10'></div>
             </div>
 
