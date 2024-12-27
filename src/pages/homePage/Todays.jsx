@@ -145,11 +145,11 @@ const Todays = () => {
                         overflowX: "scroll",
                         scrollBehavior: "smooth"
                     }} className='mb-5'>
-                    <div className='w-full flex flex-row gap-6 mb-4'>
+                    <div className='w-full flex flex-row gap-6 mb-4 p-2'>
                         {sample.slice(0, 10).map((product) => (
                             <div
                                 key={product.id}
-                                className='w-fit h-fit flex flex-col gap-4'>
+                                className='w-fit h-fit flex flex-col gap-4 rounded-md'>
 
                                 {/* Image */}
                                 <div className='w-[270px] h-[250px] flex items-center justify-center bg-[#F5F5F5] rounded-md hover:scale-105 ease-in-out duration-300 relative group'>
@@ -157,16 +157,28 @@ const Todays = () => {
                                         <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
-                                        <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${likedProduct[product.id] ? "bg-red-500" : "bg-white"
-                                            }`}>
+                                        <div
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
+                                                } hover:bg-[#DB4444]`}
+                                        >
                                             <button onClick={() => toggleLike(product.id)}>
-                                                <img src="/Navbar/Like.png" alt="Heart" className='w-5 h-4' />
+                                                <img
+                                                    src="/Navbar/Like.png"
+                                                    alt="Heart"
+                                                    className={`w-5 h-4 ${likedProduct[product.id] ? "filter invert" : ""}`}
+                                                />
                                             </button>
                                         </div>
-                                        <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${seenProduct[product.id] ? "bg-red-500" : "bg-white"
-                                            }`}>
+                                        <div
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
+                                                } hover:bg-[#DB4444]`}
+                                        >
                                             <button onClick={() => toggleSeen(product.id)}>
-                                                <img src="/Navbar/Seen.png" alt="Eye" className='w-5 h-4' />
+                                                <img
+                                                    src="/Navbar/Seen.png"
+                                                    alt="Eye"
+                                                    className={`w-5 h-4 ${seenProduct[product.id] ? "filter invert" : ""}`}
+                                                />
                                             </button>
                                         </div>
                                     </div>
@@ -212,16 +224,28 @@ const Todays = () => {
                                         <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
-                                        <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${likedProduct[product.id] ? "bg-red-500" : "bg-white"
-                                            }`}>
+                                        <div
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
+                                                } hover:bg-[#DB4444]`}
+                                        >
                                             <button onClick={() => toggleLike(product.id)}>
-                                                <img src="/Navbar/Like.png" alt="Heart" className='w-5 h-4' />
+                                                <img
+                                                    src="/Navbar/Like.png"
+                                                    alt="Heart"
+                                                    className={`w-5 h-4 ${likedProduct[product.id] ? "filter invert" : ""}`}
+                                                />
                                             </button>
                                         </div>
-                                        <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full bg-white hover:bg-[#DB4444] ${seenProduct[product.id] ? "bg-red-500" : "bg-white"
-                                            }`}>
+                                        <div
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
+                                                } hover:bg-[#DB4444]`}
+                                        >
                                             <button onClick={() => toggleSeen(product.id)}>
-                                                <img src="/Navbar/Seen.png" alt="Eye" className='w-5 h-4' />
+                                                <img
+                                                    src="/Navbar/Seen.png"
+                                                    alt="Eye"
+                                                    className={`w-5 h-4 ${seenProduct[product.id] ? "filter invert" : ""}`}
+                                                />
                                             </button>
                                         </div>
                                     </div>

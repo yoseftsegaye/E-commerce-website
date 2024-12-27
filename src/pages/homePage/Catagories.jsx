@@ -43,6 +43,9 @@ const Catagories = () => {
   };
 
   const [activeLink, setActiveLink] = useState("Camera");
+  const handleCategoryClick = (categoryName) => {
+    setActiveLink(categoryName);
+  };
 
   return (
     <div className='w-full my-20 px-[2%] md:px-[5%]'>
@@ -91,9 +94,14 @@ const Catagories = () => {
                 href="#"
                 key={catagory.id}
                 onClick={() => setActiveLink(catagory.name)}
-                className={`min-w-[170px] h-[145px] flex flex-col items-center justify-center gap-2 border-2 rounded-md hover:bg-[#DB4444] ${activeLink === catagory.name ? "bg-[#DB4444]" : ""}`}>
-                <div className='w-14 h-14 flex items-center justify-center'>
-                  <img src={catagory.image} alt={catagory.name} className='w-full h-full object-contain' />
+                className={`min-w-[170px] h-[145px] flex flex-col items-center justify-center gap-2 border-4 rounded-md hover:bg-[#DB4444] ${activeLink === catagory.name ? "bg-[#DB4444]" : ""}`}>
+                <div className={`w-14 h-14 flex items-center justify-center`} onClick={() => handleCategoryClick(catagory.name)}>
+                  <img
+                    src={catagory.image}
+                    alt={catagory.name}
+                    className={`w-full h-full object-contain ${activeLink === catagory.name ? "filter invert" : ""
+                      }`}
+                  />
                 </div>
                 <p className='text-base font-normal'>{catagory.name}</p>
               </a>
