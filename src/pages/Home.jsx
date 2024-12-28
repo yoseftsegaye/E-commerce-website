@@ -5,6 +5,7 @@ import Catagories from './homePage/Catagories';
 import ThisMonth from './homePage/ThisMonth';
 import OurProducts from './homePage/OurProducts';
 import Featured from './homePage/Featured';
+import Information from './homePage/Information';
 
 const Home = () => {
     const [detail, setDetail] = useState(true);
@@ -136,6 +137,7 @@ const Home = () => {
             <ThisMonth />
             <OurProducts />
             <Featured />
+            <Information />
 
         </div>
     );

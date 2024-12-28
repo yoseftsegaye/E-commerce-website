@@ -260,9 +260,10 @@ const ThisMonth = () => {
 
                 {/* Image */}
                 <div className="relative w-[300px] h-[210px] md:w-[450px] md:h-[315px] lg:w-[600px] lg:h-[420px] flex items-center justify-center">
-                    <div className="absolute w-[504px] h-[500px] sm:scale-50 md:scale-75 lg:scale-100 rounded-full bg-[#D9D9D9] blur-[100px] opacity-30"></div>
-                    <img src="/Month/Speaker.png" alt="Speaker" className="w-full h-full object-contain" />
+                    <img src="/Month/Speaker.png" alt="Speaker" className="w-full h-full object-contain z-10" />
+                    <div className="absolute w-[504px] h-[500px] sm:scale-50 md:scale-75 lg:scale-100 rounded-full bg-[#D9D9D9] blur-[100px] opacity-30 z-0"></div>
                 </div>
+
 
             </div>
         </div>
