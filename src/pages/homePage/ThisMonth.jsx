@@ -89,10 +89,10 @@ const ThisMonth = () => {
 
     return (
         <div className='w-full my-20 px-[2%] md:px-[5%]'>
-            <div className='flex flex-col items-center gap-[60px]'>
+            <div className='flex flex-col items-center gap-5 md:gap-[60px]'>
                 {/* This Month */}
                 <div className='flex flex-row items-center w-full relative'>
-                    <div className='flex flex-col justify-start gap-5 w-fit mb-2'>
+                    <div className='flex flex-col justify-start gap-2 md:gap-5 w-fit mb-2'>
                         <div className="flex flex-row items-center w-fit gap-4">
                             <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
                             <h1 className="text-sm md:text-base font-semibold text-[#DB4444]">This Month</h1>
@@ -113,14 +113,14 @@ const ThisMonth = () => {
                 </div>
 
                 {/* Monthly products */}
-                <div className='w-full h-fit flex justify-center flex-wrap gap-[30px]'>
+                <div className='w-full flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 md:gap-[30px] mb-2'>
                     {sample.slice(0, 4).map((product) => (
                         <div
                             key={product.id}
-                            className='w-fit h-fit flex flex-col gap-4 rounded-md'>
+                            className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
 
                             {/* Image */}
-                            <div className='w-[270px] h-[250px] flex items-center justify-center bg-[#F5F5F5] rounded-md hover:scale-105 ease-in-out duration-300 relative group'>
+                            <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
                                 <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                     <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                 </div>
@@ -151,7 +151,7 @@ const ThisMonth = () => {
                                     </div>
 
                                 </div>
-                                <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                <div className='absolute bottom-0 w-full h-10 hidden md:flex bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                     <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
                                         Add To Cart
                                     </button>
@@ -159,8 +159,8 @@ const ThisMonth = () => {
                             </div>
 
                             {/* Detail */}
-                            <div className='w-52 h-[84px] flex flex-col gap-2 pl-1'>
-                                <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
+                            <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
+                                <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                 <div className='flex flex-row items-center gap-3'>
                                     <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
                                     <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
@@ -178,11 +178,11 @@ const ThisMonth = () => {
                 </div>
 
                 {/* Load more products */}
-                <div className='w-full flex flex-wrap justify-center gap-[30px] mb-2'>
+                <div className='w-full flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 md:gap-[30px] mb-2'>
                     {sample.slice(0, displayedCount).map((product) => (
-                        <div key={product.id} className='w-fit h-fit flex flex-col gap-4 rounded-md'>
+                        <div key={product.id} className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
                             {/* Image */}
-                            <div className='w-[270px] h-[250px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                            <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
                                 <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                     <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                 </div>
@@ -213,7 +213,7 @@ const ThisMonth = () => {
                                     </div>
 
                                 </div>
-                                <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                <div className='absolute bottom-0 w-full h-10 hidden md:flex bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                     <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
                                         Add To Cart
                                     </button>
@@ -222,8 +222,8 @@ const ThisMonth = () => {
 
                             {/* Detail */}
                             <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
-                                <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
-                                <div className='flex flex-row items-center gap-3'>
+                                <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
+                                <div className='flex flex-row justify-center gap-2'>
                                     <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
                                     <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
                                 </div>
@@ -261,7 +261,7 @@ const ThisMonth = () => {
                 {/* Image */}
                 <div className="relative w-[300px] h-[210px] md:w-[450px] md:h-[315px] lg:w-[600px] lg:h-[420px] flex items-center justify-center">
                     <div className="absolute w-[504px] h-[500px] sm:scale-50 md:scale-75 lg:scale-100 rounded-full bg-[#D9D9D9] blur-[100px] opacity-30"></div>
-                    <img src="/Month/Speaker.png" alt="Speaker" className="relative w-full h-full object-contain" />
+                    <img src="/Month/Speaker.png" alt="Speaker" className="w-full h-full object-contain" />
                 </div>
 
             </div>
