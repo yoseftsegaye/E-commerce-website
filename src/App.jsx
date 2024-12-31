@@ -5,12 +5,14 @@ import Footer from './pages/Footer';
 
 function App() {
   return (
-    <div className='h-100vh'>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Home />
+      <div className="flex-grow">
+        <Home />
+      </div>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

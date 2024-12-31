@@ -48,11 +48,11 @@ const Catagories = () => {
   };
 
   return (
-    <div className='w-full my-20 px-[2%] md:px-[5%]'>
-      <div className="flex flex-col items-center gap-[60px]">
+    <div className='w-full my-10 md:my-20 px-[2%] md:px-[5%]'>
+      <div className="flex flex-col items-center gap-5 md:gap-[60px]">
         {/* Categories */}
         <div className='flex flex-row items-center w-full relative'>
-          <div className='flex flex-col justify-start gap-5 w-fit mb-2'>
+          <div className='flex flex-col justify-start gap-2 md:gap-5 w-fit mb-2'>
             <div className="flex flex-row items-center w-fit gap-4">
               <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
               <h1 className="text-sm md:text-base font-semibold text-[#DB4444]">Categories</h1>
@@ -103,7 +103,8 @@ const Catagories = () => {
                       }`}
                   />
                 </div>
-                <p className='text-base font-normal'>{catagory.name}</p>
+                <p className={`text-base font-normal ${activeLink === catagory.name ? "filter invert" : ""
+                  }`}>{catagory.name}</p>
               </a>
             ))}
           </div>

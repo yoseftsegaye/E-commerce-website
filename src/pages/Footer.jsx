@@ -60,7 +60,7 @@ const Footer = () => {
                                 <p className='text-xs font-normal opacity-70'>Save $3 with App New User Only</p>
                                 <div className='w-full flex flex-row gap-2'>
                                     <div className='w-20 h-20 flex items-center justify-center'>
-                                        <img src="/Footer/Qrcode.png" alt="Qrcode" className='w-[76px] h-[766px] object-contain' />
+                                        <img src="/Footer/Qrcode.png" alt="Qrcode" className='w-[76px] h-[76px] object-contain' />
                                     </div>
                                     <div className='w-[110px] h-20 flex flex-col gap-1'>
                                         <a

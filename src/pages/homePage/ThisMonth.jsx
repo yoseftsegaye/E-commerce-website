@@ -88,7 +88,7 @@ const ThisMonth = () => {
     };
 
     return (
-        <div className='w-full my-20 px-[2%] md:px-[5%]'>
+        <div className='w-full my-10 md:my-20 px-[2%] md:px-[5%]'>
             <div className='flex flex-col items-center gap-5 md:gap-[60px]'>
                 {/* This Month */}
                 <div className='flex flex-row items-center w-full relative'>
@@ -263,8 +263,6 @@ const ThisMonth = () => {
                     <img src="/Month/Speaker.png" alt="Speaker" className="w-full h-full object-contain z-10" />
                     <div className="absolute w-[504px] h-[500px] sm:scale-50 md:scale-75 lg:scale-100 rounded-full bg-[#D9D9D9] blur-[100px] opacity-30 z-0"></div>
                 </div>
-
-
             </div>
         </div>
     )

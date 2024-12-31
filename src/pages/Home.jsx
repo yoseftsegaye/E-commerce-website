@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Todays from './homePage/Todays';
 import Catagories from './homePage/Catagories';
@@ -20,9 +19,9 @@ const Home = () => {
             <div className="flex flex-row w-full mt-20 mb-4 px-[2%] md:px-[5%]">
 
                 {/* Side menu bar */}
-                <div className={`relative ${open ? "w-[233px] h-fit pt-[3%]" : "w-10 h-auto"} lg:w-[233px] lg:h-auto pr-1 lg:pr-4 lg:pt-10`}>
+                <div className={`relative ${open ? "w-[200px] md:w-[233px] h-fit pt-[3%]" : "w-10 h-auto"} lg:w-[233px] lg:h-auto pr-1 lg:pr-4 lg:pt-10`}>
                     {/* Sidebar content */}
-                    <div className={`${open ? "flex" : "hidden"} flex-col items-start gap-4 w-[217px] h-[344px] lg:flex lg:h-auto`}>
+                    <div className={`${open ? "flex w-[160px]" : "hidden"} flex-col items-start gap-4 w-[217px] h-[344px] lg:flex lg:h-auto`}>
                         <div className="flex flex-row items-center justify-between w-full">
                             <button className="font-normal text-base hover:text-[#DB4444]">Women's Fashion</button>
                             <button>
@@ -58,11 +57,11 @@ const Home = () => {
                 {/* Front image */}
                 <div className={`w-full h-auto pl-[3%] pt-[3%] transition-transform duration-300 border-l border-black/50`}
                     onClick={handleCloseDetail}>
-                    <div className="relative flex flex-row justify-center md:justify-between w-full h-full bg-black md:pl-4 lg:pl-16">
+                    <div className="relative flex flex-row justify-center md:justify-between w-full h-full bg-black pl-[6%]">
                         {/* Description section */}
                         <div className="hidden md:flex flex-col w-[300px] gap-8 py-10 left-0">
                             <div className="flex flex-row justify-between items-center w-36 md:w-[190px]">
-                                <img src="/Home/Apple.png" alt="Apple" className="w-10 h-12" />
+                                <img src="/Home/Apple.png" alt="Apple" className="w-10 h-12 object-contain" />
                                 <h1 className="text-sm md:text-base font-normal text-white">iPhone 14 Series</h1>
                             </div>
                             <div className="w-32 md:w-[294px] text-2xl md:text-5xl font-semibold text-[#FAFAFA]">
@@ -116,7 +115,7 @@ const Home = () => {
                                 setDetail(!detail);
                             }}
                         >
-                            <img src="/Home/Phone.jpg" alt="Phone" className="w-fit h-full" />
+                            <img src="/Home/Phone.jpg" alt="Phone" className="w-fit h-full object-contain" />
                         </div>
                     </div>
                 </div>

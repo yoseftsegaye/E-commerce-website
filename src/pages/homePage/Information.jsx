@@ -2,7 +2,7 @@ import React from 'react'
 
 const Information = () => {
     return (
-        <div className='w-full h-fit flex justify-center items-center my-20 px-[2%] md:px-[5%]'>
+        <div className='w-full h-fit flex justify-center items-center my-10 md:my-20 px-[2%] md:px-[5%]'>
             <div className='w-[943px] h-fit flex flex-wrap items-center justify-center gap-8'>
                 {/* Contents */}
                 <div className='min-w-[249px] h-fit flex flex-col flex-nowrap items-center justify-center gap-6'>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Featured = () => {
     return (
-        <div className='w-full h-fit my-20 px-[2%] md:px-[5%]'>
+        <div className='w-full h-fit my-10 md:my-20 px-[2%] md:px-[5%]'>
             <div className='flex flex-col items-center gap-5 md:gap-[60px]'>
                 {/* Featured */}
                 <div className='flex flex-row items-center w-full relative'>
@@ -65,10 +65,10 @@ const Featured = () => {
                         </div>
 
                         <div className='w-full h-[50%] flex flex-row gap-[4%]'>
-                            <div className='w-[50%] h-auto p-[5%] fflex items-center justify-center bg-black relative'>
-                                <div className="absolute w-full h-full rounded-full bg-[#D9D9D9] blur-[100px] opacity-30"></div>
-                                <img src="/Featured/Speakers.png" alt="Speakers" className='w-full h-full object-contain' />
-                                <div className='absolute bottom-1 left-1 md:bottom-3 md:left-3 lg:bottom-6 lg:left-6  w-fit h-fit flex flex-col gap-[2px] md:gap-2 '>
+                            <div className='w-[50%] h-auto p-[5%] flex items-center justify-center bg-black relative'>
+                                <img src="/Featured/Speakers.png" alt="Speakers" className='w-full h-full object-contain z-10' />
+                                <div className="absolute top-0 right-0 w-full h-full rounded-full bg-[#D9D9D9] blur-[100px] opacity-30 z-2"></div>
+                                <div className='absolute bottom-1 left-1 md:bottom-3 md:left-3 lg:bottom-6 lg:left-6  w-fit h-fit flex flex-col gap-[2px] md:gap-2 z-20'>
                                     <div className='w-44 md:w-[230px] h-fit flex flex-col lg:gap-2'>
                                         <h1 className='text-sm md:text-xl font-semibold text-white hover:scale-110 transition-transform duration-300'>Speakers</h1>
                                         <p className='hidden md:flex text-xs md:text-sm font-normal text-white leading-tight hover:scale-110 transition-transform duration-300'>Amazon wireless speakers</p>
@@ -81,10 +81,10 @@ const Featured = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className='w-[50%] h-auto p-[5%] fflex items-center justify-center bg-black relative'>
-                                <div className="absolute w-full h-full rounded-full bg-[#D9D9D9] blur-[100px] opacity-30"></div>
-                                <img src="/Featured/Perfume.png" alt="Perfume" className='w-full h-full object-contain' />
-                                <div className='absolute bottom-1 left-1 md:bottom-3 md:left-3 lg:bottom-6 lg:left-6  w-fit h-fit flex flex-col gap-[2px] md:gap-2 '>
+                            <div className='w-[50%] h-auto p-[5%] flex items-center justify-center bg-black relative'>
+                                <img src="/Featured/Perfume.png" alt="Perfume" className='w-full h-full object-contain z-10' />
+                                <div className="absolute top-0 right-0 w-full h-full rounded-full bg-[#D9D9D9] blur-[100px] opacity-30 z-0"></div>
+                                <div className='absolute bottom-1 left-1 md:bottom-3 md:left-3 lg:bottom-6 lg:left-6  w-fit h-fit flex flex-col gap-[2px] md:gap-2 z-20'>
                                     <div className='w-44 md:w-[230px] h-fit flex flex-col lg:gap-2'>
                                         <h1 className='text-sm md:text-xl font-semibold text-white hover:scale-110 transition-transform duration-300'>Perfume</h1>
                                         <p className='hidden md:flex text-xs md:text-sm font-normal text-white leading-tight hover:scale-110 transition-transform duration-300'>GUCCI INTENSE OUD EDP</p>

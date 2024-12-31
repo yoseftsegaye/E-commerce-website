@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 
 const Navbar = () => {
     const [activeLink, setActiveLink] = useState("Home"); // Default active link
-    const links = ["Home", "Contact", "About", "SignUp"]; // List of links
+    const links = [
+        { id: 1, name: "Home", href: "#" },
+        { id: 2, name: "Contact", href: "#" },
+        { id: 3, name: "About", href: "#" },
+        { id: 4, name: "SignUp", href: "#" },
+    ]; // List of links
 
     const [open, setOpen] = useState(false);
 
@@ -26,19 +31,17 @@ const Navbar = () => {
                     {/* Link for large screen */}
                     <div className="hidden lg:flex justify-end gap-10">
                         {links.map((link) => (
-                            <div key={link} className="w-auto px-1">
+                            <div key={link.id} className="w-auto px-1">
                                 <a
-                                    href="/"
+                                    href={link.href}
                                     className="font-normal hover:text-[#DB4444]"
-                                    onClick={(e) => {
-                                        e.preventDefault(); // Prevent page reload
-                                        setActiveLink(link); // Set active link
-                                    }}
+                                    onClick={() => setActiveLink(link.name)} // Only set active link, allow navigation
                                 >
-                                    {link}
+                                    {link.name}
                                 </a>
+
                                 <div
-                                    className={`w-full h-[2px] rounded bg-black transition-opacity ${activeLink === link ? "opacity-50" : "opacity-0"
+                                    className={`w-full h-[2px] rounded bg-black transition-opacity ${activeLink === link.name ? "opacity-50" : "opacity-0"
                                         }`}
                                 ></div>
                             </div>
@@ -50,12 +53,12 @@ const Navbar = () => {
                 <div className='flex flex-row justify-center items-center w-[70%] lg:w-[40%] h-10 gap-[5%]'>
 
                     {/* Search section */}
-                    <div className='flex items-center justify-center w-full rounded bg-slate-100 h-full pl-3 md:pl-5 pr-3 py-2 relative'>
-                        <div className='flex flex-row items-center w-full h-full'>
+                    <div className='flex items-center justify-center w-full rounded bg-slate-100 h-full pl-3 md:pl-5 pr-10 py-2 relative'>
+                        <div className='flex flex-row items-center w-full h-full relative'>
                             <input
                                 type="text"
                                 placeholder='What are you looking for?'
-                                className='text-sm font-normal bg-slate-100 w-full h-full outline-none'
+                                className='text-sm font-normal bg-slate-100 w-full h-full outline-none  placeholder-ellipsis'
                             />
                         </div>
 

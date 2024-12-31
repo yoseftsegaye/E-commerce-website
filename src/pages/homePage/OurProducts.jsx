@@ -56,7 +56,7 @@ const OurProducts = () => {
     };
 
     return (
-        <div className='w-full my-20 px-[2%] md:px-[5%]'>
+        <div className='w-full my-10 md:my-20 px-[2%] md:px-[5%]'>
             <div className="flex flex-col items-center gap-5 md:gap-[60px]">
                 {/* Our products */}
                 <div className='flex flex-row items-center w-full relative'>

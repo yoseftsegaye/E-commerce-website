@@ -215,11 +215,11 @@ const Todays = () => {
 
                 {/* See More */}
                 <div className="w-full pr-[2%] md:pr-[5%]">
-                    <div className='w-full flex flex-wrap justify-center gap-6 mb-2'>
+                    <div className='w-full flex flex-col md:flex-row md:flex-wrap md:justify-center gap-5 md:gap-[30px] mb-2'>
                         {sample.slice(0, displayedCount).map((product) => (
-                            <div key={product.id} className='w-fit h-fit flex flex-col gap-4 rou'>
+                            <div key={product.id} className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
                                 {/* Image */}
-                                <div className='w-[270px] h-[250px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
                                     </div>
@@ -253,7 +253,7 @@ const Todays = () => {
                                     <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
                                         <p className='text-sm font-normal text-white'>{product.discount}</p>
                                     </div>
-                                    <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                    <div className='absolute bottom-0 w-full h-10 hidden md:flex bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                                         <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
                                             Add To Cart
                                         </button>
@@ -261,7 +261,7 @@ const Todays = () => {
                                 </div>
 
                                 {/* Detail */}
-                                <div className='w-52 h-[84px] flex flex-col gap-2 pl-1'>
+                                <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                     <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
                                         <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
