@@ -31,10 +31,10 @@ const Navbar = () => {
                     {/* Link for large screen */}
                     <div className="hidden lg:flex justify-end gap-10">
                         {links.map((link) => (
-                            <div key={link.id} className="w-auto px-1">
+                            <div key={link.id} className="w-auto px-1 hover:text-[#DB4444] hover:scale-110 transition-transform duration-300">
                                 <a
                                     href={link.href}
-                                    className="font-normal hover:text-[#DB4444]"
+                                    className="text-base font-normal"
                                     onClick={() => setActiveLink(link.name)} // Only set active link, allow navigation
                                 >
                                     {link.name}
@@ -68,28 +68,23 @@ const Navbar = () => {
                                 <img
                                     src="/Navbar/Search.png"
                                     alt="SearchButton"
-                                    className='w-5 h-5' />
+                                    className='w-5 h-5 object-contain hover:scale-110 transition-transform duration-300' />
                             </button>
                         </div>
                     </div>
 
                     {/* Button section */}
                     <div className='flex flex-row justify-center items-center w-[88px] md:w-[120px] h-8 gap-2 md:gap-4'>
-                        <div className='flex flex-row justify-center items-center w-4 md:w-8 h-3 md:h-8'>
-                            <button>
-                                <img src="/Navbar/Like.png" alt="Like" className='w-full h-full' />
-                            </button>
-                        </div>
-                        <div className='flex flex-row justify-center items-center w-5 md:w-8 h-6 md:h-8'>
-                            <button>
-                                <img src="/Navbar/Cart.png" alt="Cart" className='w-full h-full' />
-                            </button>
-                        </div>
-                        <div className='flex flex-row justify-center items-center w-5 md:w-8 h-6 md:h-8'>
-                            <button>
-                                <img src="/Navbar/User.png" alt="User" className='w-full h-full' />
-                            </button>
-                        </div>
+                        <button>
+                            <img src="/Navbar/Like.png" alt="Like" className='w-5 h-5 object-contain hover:scale-125 transition-transform duration-300' />
+                        </button>
+                        <button>
+                            <img src="/Navbar/Cart.png" alt="Cart" className='w-5 h-5 object-contain hover:scale-125 transition-transform duration-300' />
+                        </button>
+                        <button>
+                            <img src="/Navbar/User.png" alt="User" className='w-5 h-5 object-contain hover:scale-125 transition-transform duration-300' />
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -121,10 +116,10 @@ const Navbar = () => {
                     <h1 className="font-bold text-xl md:text-2xl transition-transform hover:scale-105">Exclusive</h1>
                 </div>
                 <div className='flex flex-col items-start px-10 py-10 font-medium text-lg gap-6'>
-                    <a href="/" className="transition-transform hover:scale-105 hover:text-[#DB4444]">Home</a>
-                    <a href="/" className="transition-transform hover:scale-105 hover:text-[#DB4444]">Contact</a>
-                    <a href="/" className="transition-transform hover:scale-105 hover:text-[#DB4444]">About</a>
-                    <a href="/" className="transition-transform hover:scale-105 hover:text-[#DB4444]">Sign Up</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">Home</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">Contact</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">About</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">Sign Up</a>
                 </div>
             </div>
         </nav>

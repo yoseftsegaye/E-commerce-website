@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='w-full  bg-black text-white pb-4'>
+        <div className='w-full bg-black text-white pb-4'>
             <div className='w-full h-fit flex items-center justify-center px-[2%] md:px-[5%]'>
                 <div className='w-full h-fit flex flex-wrap justify-center gap-20 my-14'>
                     {/* Exclusive */}
