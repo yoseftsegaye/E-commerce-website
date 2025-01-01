@@ -10,6 +10,9 @@ const Navbar = () => {
     ]; // List of links
 
     const [open, setOpen] = useState(false);
+    const [likeClicked, setLikeClicked] = useState(false);
+    const [cartClicked, setCartClicked] = useState(false);
+    const [profileClicked, setProfileClicked] = useState(false);
 
     // Close menu when clicking outside
     const closeMenu = () => {
@@ -74,17 +77,60 @@ const Navbar = () => {
                     </div>
 
                     {/* Button section */}
-                    <div className='flex flex-row justify-center items-center w-[88px] md:w-[120px] h-8 gap-2 md:gap-4'>
-                        <button>
-                            <img src="/Navbar/Like.png" alt="Like" className='w-5 h-5 object-contain hover:scale-125 transition-transform duration-300' />
-                        </button>
-                        <button>
-                            <img src="/Navbar/Cart.png" alt="Cart" className='w-5 h-5 object-contain hover:scale-125 transition-transform duration-300' />
-                        </button>
-                        <button>
-                            <img src="/Navbar/User.png" alt="User" className='w-5 h-5 object-contain hover:scale-125 transition-transform duration-300' />
-                        </button>
+                    <div className='flex flex-row justify-center items-center w-[88px] md:w-[120px] h-8 md:gap-2 relative'>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 mb-2 ${likeClicked ? "bg-[#DB4444]" : "bg-white"}`}>
+                            <button onClick={() => setLikeClicked(!likeClicked)}>
+                                <img src="/Navbar/Like.png" alt="Like" className={`w-5 h-5 object-contain hover:scale-125 transition-transform duration-300 ${likeClicked ? "filter invert" : ""}`} />
+                            </button>
+                        </div>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${cartClicked ? "bg-[#DB4444]" : "bg-white"}`}>
+                            <button onClick={() => setCartClicked(!cartClicked)}>
+                                <img src="/Navbar/Cart.png" alt="Cart" className={`w-5 h-5 object-contain hover:scale-125 transition-transform duration-300 ${cartClicked ? "filter invert" : ""}`} />
+                            </button>
+                        </div>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${profileClicked ? "bg-[#DB4444]" : "bg-white"}`}>
+                            <button onClick={() => setProfileClicked(!profileClicked)}>
+                                <img src="/Navbar/User.png" alt="User" className={`w-5 h-5 object-contain hover:scale-125 transition-transform duration-300 ${profileClicked ? "filter invert" : ""}`} />
+                            </button>
+                        </div>
 
+                        {/* Account dropdown */}
+                        <div className={`absolute bottom-0 right-0 z-10 w-[224px] h-[208px] bg-gradient-to-br from-gray-300 to-black translate-y-full rounded-md ${profileClicked ? "flex" : "hidden"}`}>
+                            <div className='w-full h-full flex items-center justify-center'>
+                                <div className='w-fit h-fit flex flex-col gap-1'>
+                                    <div className='w-fit h-8 flex flex-row items-center gap-4'>
+                                        <img src="/Account-DropDown/User.png" alt="User" className='w-6 h-6 object-contain' />
+                                        <a
+                                            href="#"
+                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>Manage My Account</a>
+                                    </div>
+                                    <div className='w-fit h-8 flex flex-row items-center gap-4'>
+                                        <img src="/Account-DropDown/Order.png" alt="Order" className='w-6 h-6 object-contain' />
+                                        <a
+                                            href="#"
+                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>My Order</a>
+                                    </div>
+                                    <div className='w-fit h-8 flex flex-row items-center gap-4'>
+                                        <img src="/Account-DropDown/Cancel.png" alt="Cancel" className='w-6 h-6 object-contain' />
+                                        <a
+                                            href="#"
+                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>My Cancellations</a>
+                                    </div>
+                                    <div className='w-fit h-8 flex flex-row items-center gap-4'>
+                                        <img src="/Account-DropDown/Reviews.png" alt="Reviews" className='w-6 h-6 object-contain' />
+                                        <a
+                                            href="#"
+                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>My Reviews</a>
+                                    </div>
+                                    <div className='w-fit h-8 flex flex-row items-center gap-4'>
+                                        <img src="/Account-DropDown/Logout.png" alt="Logout" className='w-6 h-6 object-contain' />
+                                        <a
+                                            href="#"
+                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

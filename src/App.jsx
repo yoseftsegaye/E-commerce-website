@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      {/* <div className="flex-grow">
+      <div className="flex-grow">
         <Home />
-      </div> */}
+      </div>
       {/* <SignUp /> */}
-      <LogIn />
+      {/* <LogIn /> */}
       <Footer />
     </div>
   );

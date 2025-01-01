@@ -159,7 +159,7 @@ const Todays = () => {
                                     <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
                                         <div
                                             className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[#DB4444]`}
+                                                } hover:bg-[rgb(219,68,68)]`}
                                         >
                                             <button onClick={() => toggleLike(product.id)}>
                                                 <img

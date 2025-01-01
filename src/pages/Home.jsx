@@ -19,9 +19,9 @@ const Home = () => {
             <div className="flex flex-row w-full mt-20 mb-4 px-[2%] md:px-[5%]">
 
                 {/* Side menu bar */}
-                <div className={`relative ${open ? "w-[200px] md:w-[233px] h-fit pt-[3%]" : "w-10 h-auto"} lg:w-[233px] lg:h-auto pr-1 lg:pr-4 lg:pt-10`}>
+                <div className="w-10 lg:w-[233px] lg:h-fit pr-1 lg:pr-4 lg:pt-10 relative">
                     {/* Sidebar content */}
-                    <div className={`${open ? "flex w-[160px]" : "hidden"} flex-col items-start gap-4 w-[217px] h-[344px] lg:flex lg:h-auto`}>
+                    <div className=" hidden lg:flex flex-col items-start gap-4 w-[217px] h-[344px] lg:h-auto">
                         <div className="flex flex-row items-center justify-between w-full">
                             <button className="font-normal text-base hover:text-[#DB4444]">Women's Fashion</button>
                             <button>
@@ -42,9 +42,8 @@ const Home = () => {
                         <button className="font-normal text-base hover:text-[#DB4444]">Groceries & pets</button>
                         <button className="font-normal text-base hover:text-[#DB4444]">Health & Beauty</button>
                     </div>
-
                     {/* Sidebar expand button */}
-                    <div className="absolute bottom-1 right-2 flex items-center justify-center z-[10] lg:hidden">
+                    <div className={`absolute bottom-1 right-2 flex items-center justify-center z-[10] lg:hidden transition-transform duration-300 ${open ? 'translate-x-[160px]' : "translate-x-0"}`}>
                         <button
                             className="flex items-center justify-center w-8 h-5 rounded-xl bg-[#f19393] hover:bg-[#DB4444] text-white"
                             onClick={() => setOpen(!open)}
@@ -52,10 +51,35 @@ const Home = () => {
                             {open ? "<<" : ">>"}
                         </button>
                     </div>
+                    {/* Small screen icon */}
+                    <div className={`fixed h-fit w-[160px] flex flex-col items-start pt-[3%] gap-4 transition-transform transform duration-500 ${open ? 'translate-x-0' : '-translate-x-52'} lg:hidden`}>
+                        <div className="flex flex-row items-center justify-between w-full">
+                            <button className="font-normal text-base hover:text-[#DB4444]">Women's Fashion</button>
+                            <button>
+                                <img src="/Home/DropDown.png" alt="DropDown" className="w-2 h-3" />
+                            </button>
+                        </div>
+                        <div className="flex flex-row items-center justify-between w-full">
+                            <button className="font-normal text-base hover:text-[#DB4444]">Men's Fashion</button>
+                            <button>
+                                <img src="/Home/DropDown.png" alt="DropDown" className="w-2 h-3" />
+                            </button>
+                        </div>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Electronics</button>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Home & Lifestyle</button>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Medicine</button>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Sport & Outdoor</button>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Baby's & Toys</button>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Groceries & pets</button>
+                        <button className="font-normal text-base hover:text-[#DB4444]">Health & Beauty</button>
+                    </div>
                 </div>
 
                 {/* Front image */}
-                <div className={`w-full h-auto pl-[3%] pt-[3%] transition-transform duration-300 border-l border-black/50`}
+                <div className={`w-full h-auto pl-[3%] pt-[3%] transition-transform duration-300 border-l border-black/50 ${open ? 'translate-x-[160px] lg:translate-x-0' : 'translate-x-0'}`}
+                    style={{
+                        minHeight: open ? "344px" : "auto",
+                    }}
                     onClick={handleCloseDetail}>
                     <div className="relative flex flex-row justify-center md:justify-between w-full h-full bg-black pl-[6%]">
                         {/* Description section */}
