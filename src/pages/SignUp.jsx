@@ -3,7 +3,7 @@ import React from 'react'
 const SignUp = () => {
     return (
         <div className='w-full pr-[2%] md:pr-[5%] mt-32 mb-14'>
-            <div className='w-full h-fit flex fle-row items-center  justify-between'>
+            <div className='w-full h-fit flex fle-row items-center justify-between'>
                 {/* image */}
                 <div className='hidden md:flex w-[50%] h-auto pt-[5%] items-center justify-start bg-[#CBE4E8]'>
                     <img src="/SignUp.png" alt="SignUp" className='w-full h-full object-contain' />
