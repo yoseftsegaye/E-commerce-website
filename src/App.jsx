@@ -6,18 +6,21 @@ import SignUp from './pages/SignUp';
 import LogIn from './pages/LogIn';
 import Wishlist from './pages/Wishlist';
 import Cart from './pages/Cart'
+import CheckOut from './pages/CheckOut';
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="h-screen flex flex-col relative">
       <Navbar />
-      {/* <div className="flex-grow">
-        <Home />
-      </div> */}
-      {/* <SignUp /> */}
-      {/* <LogIn /> */}
-      {/* <Wishlist /> */}
-      <Cart />
+      <div className="flex-grow">
+        {/* <Home /> */}
+        {/* <SignUp /> */}
+        {/* <LogIn /> */}
+        {/* <Wishlist /> */}
+        {/* <Cart /> */}
+        <CheckOut />
+      </div>
+
       <Footer className="absolute bottom-0 left-0" />
     </div>
   );
