@@ -3,10 +3,18 @@ import { AccountMap } from './Roadmap'
 
 const Account = () => {
 
-    const [showPassword, setShowPassword] = useState(false);
+    const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+    const [showNewPassword, setNewCurrentPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-    const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
+    const toggleCurrentPasswordVisibility = () => {
+        setShowCurrentPassword(!showCurrentPassword);
+    };
+    const toggleNewPasswordVisibility = () => {
+        setNewCurrentPassword(!showNewPassword);
+    };
+    const toggleConfirmPasswordVisibility = () => {
+        setShowConfirmPassword(!showConfirmPassword);
     };
 
 
@@ -81,48 +89,105 @@ const Account = () => {
                         </div>
                     </div>
                     <div className='w-full h-fit flex flex-col gap-4'>
+                        {/* Password */}
                         <p className='text-base font-normal'>Password Changes</p>
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            placeholder="Current Password"
-                            className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
-                            autoComplete="current-password"
-                            maxLength="128"
-                            required
-                            pattern=".{8,}"
-                            title="Password must be at least 8 characters long."
-                        />
-                        <button
-                            type="button"
-                            className="absolute inset-y-0 right-3 flex items-center"
-                            onClick={togglePasswordVisibility}
-                            aria-label={showPassword ? "Hide password" : "Show password"}
-                        >
-                            {showPassword ? (
-                                <img
-                                    src="/path-to-hide-icon.svg"
-                                    alt="Hide Password"
-                                    className="w-6 h-6"
-                                />
-                            ) : (
-                                <img
-                                    src="/path-to-show-icon.svg"
-                                    alt="Show Password"
-                                    className="w-6 h-6"
-                                />
-                            )}
-                        </button>
+                        <div className='w-full h-12 relative'>
+                            <input
+                                type={showCurrentPassword ? "text" : "password"}
+                                placeholder="Current Password"
+                                className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
+                                autoComplete="current-password"
+                                maxLength="128"
+                                required
+                                pattern=".{8,}"
+                                title="Password must be at least 8 characters long."
+                            />
+                            <button
+                                type="button"
+                                className="absolute inset-y-0 right-3 flex items-center"
+                                onClick={toggleCurrentPasswordVisibility}
+                                aria-label={showCurrentPassword ? "Hide password" : "Show password"}
+                            >
+                                {showCurrentPassword ? (
+                                    <img
+                                        src="/eye-empty.svg"
+                                        alt="Hide Password"
+                                        className="w-6 h-6"
+                                    />
+                                ) : (
+                                    <img
+                                        src="/eye-password-hide.svg"
+                                        alt="Show Password"
+                                        className="w-5 h-5 object-contain"
+                                    />
+                                )}
+                            </button>
+                        </div>
+                        <div className='w-full h-12 relative'>
+                            <input
+                                type={showNewPassword ? "text" : "password"}
+                                placeholder="New Password"
+                                className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
+                                autoComplete="current-password"
+                                maxLength="128"
+                                required
+                                pattern=".{8,}"
+                                title="Password must be at least 8 characters long."
+                            />
+                            <button
+                                type="button"
+                                className="absolute inset-y-0 right-3 flex items-center"
+                                onClick={toggleNewPasswordVisibility}
+                                aria-label={showNewPassword ? "Hide password" : "Show password"}
+                            >
+                                {showNewPassword ? (
+                                    <img
+                                        src="/eye-empty.svg"
+                                        alt="Hide Password"
+                                        className="w-6 h-6"
+                                    />
+                                ) : (
+                                    <img
+                                        src="/eye-password-hide.svg"
+                                        alt="Show Password"
+                                        className="w-5 h-5 object-contain"
+                                    />
+                                )}
+                            </button>
+                        </div>
+                        <div className='w-full h-12 relative'>
+                            <input
+                                type={showConfirmPassword ? "text" : "password"}
+                                placeholder="Confirm Password"
+                                className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
+                                autoComplete="current-password"
+                                maxLength="128"
+                                required
+                                pattern=".{8,}"
+                                title="Password must be at least 8 characters long."
+                            />
+                            <button
+                                type="button"
+                                className="absolute inset-y-0 right-3 flex items-center"
+                                onClick={toggleConfirmPasswordVisibility}
+                                aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+                            >
+                                {showConfirmPassword ? (
+                                    <img
+                                        src="/eye-empty.svg"
+                                        alt="Hide Password"
+                                        className="w-6 h-6"
+                                    />
+                                ) : (
+                                    <img
+                                        src="/eye-password-hide.svg"
+                                        alt="Show Password"
+                                        className="w-5 h-5 object-contain"
+                                    />
+                                )}
+                            </button>
+                        </div>
 
-                        <input
-                            type="text"
-                            placeholder='New Password'
-                            className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none'
-                        />
-                        <input
-                            type="text"
-                            placeholder='Confirm Password'
-                            className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none'
-                        />
                     </div>
                     <div className='w-full h-14 flex flex-row items-center justify-end gap-8'>
                         <button className='text-base font-normal hover:text-[#DB4444]'>Cancel</button>
@@ -138,3 +203,8 @@ const Account = () => {
 }
 
 export default Account
+
+
+
+
+
