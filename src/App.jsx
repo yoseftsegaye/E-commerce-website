@@ -7,6 +7,7 @@ import LogIn from './pages/LogIn';
 import Wishlist from './pages/Wishlist';
 import Cart from './pages/Cart'
 import CheckOut from './pages/CheckOut';
+import Account from './pages/Account';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         {/* <LogIn /> */}
         {/* <Wishlist /> */}
         {/* <Cart /> */}
-        <CheckOut />
+        {/* <CheckOut /> */}
+        <Account />
       </div>
 
       <Footer className="absolute bottom-0 left-0" />
