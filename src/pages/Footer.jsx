@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div className='w-full bg-black text-white pb-4'>
+        <div className='w-full bg-black text-textSecondary pb-4'>
             <div className='w-full h-fit flex items-center justify-center px-[2%] md:px-[5%]'>
                 <div className='w-full h-fit flex flex-wrap justify-center gap-20 my-14'>
                     {/* Exclusive */}
@@ -16,7 +16,7 @@ const Footer = () => {
                             <input
                                 type="text"
                                 placeholder='Enter your email'
-                                className='w-full h-12 pl-2 pr-10 border-2 border-white rounded-md bg-black text-white'
+                                className='w-full h-12 pl-2 pr-10 border-2 border-white rounded-md bg-black text-textSecondary'
                             />
                             <img src="/Footer/Subscribe.png" alt="Subscribe" className='absolute top-3 right-2 w-6 h-6 object-contain' />
                         </div>

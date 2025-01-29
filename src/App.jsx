@@ -16,7 +16,7 @@ function App() {
     <div className="h-screen flex flex-col relative">
       <Navbar />
       <div className="flex-grow">
-        <Home />
+        {/* <Home /> */}
         {/* <SignUp /> */}
         {/* <LogIn /> */}
         {/* <Wishlist /> */}
@@ -24,7 +24,7 @@ function App() {
         {/* <CheckOut /> */}
         {/* <Account /> */}
         {/* <About /> */}
-        {/* <Contact /> */}
+        <Contact />
       </div>
       <Footer className="absolute bottom-0 left-0" />
     </div>

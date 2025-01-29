@@ -24,7 +24,7 @@ const Account = () => {
                 <AccountMap />
                 <div className='w-fit flex flex-row items-center justify-center gap-1'>
                     <p className='text-base font-normal'>Welcome!</p>
-                    <p className='text-base font-normal text-[#DB4444]'>Mr Yosef</p>
+                    <p className='text-base font-normal text-primary'>Mr Yosef</p>
                 </div>
             </div>
 
@@ -51,14 +51,14 @@ const Account = () => {
                 </div>
                 {/* Edit your profile */}
                 <div className='w-full h-fit flex flex-col gap-4 md:gap-6 px-[3%] lg:px-[5%] py-5 rounded-md shadow-[0px_1px_10px_rgba(0,0,0,0.05)]'>
-                    <h1 className='text-xl font-medium text-[#DB4444]'>Edit Your Profile</h1>
+                    <h1 className='text-xl font-medium text-primary'>Edit Your Profile</h1>
                     <div className='w-full h-20 flex flex-row gap-4 lg:gap-12'>
                         <div className='w-1/2 h-full flex flex-col gap-2'>
                             <p className='text-base font-normal'>First Name</p>
                             <input
                                 type="text"
                                 placeholder='Md'
-                                className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none capitalize'
+                                className='w-full h-12 bg-secondary px-3 rounded focus:outline-none capitalize'
                             />
                         </div>
                         <div className='w-1/2 h-full flex flex-col gap-2'>
@@ -66,7 +66,7 @@ const Account = () => {
                             <input
                                 type="text"
                                 placeholder='Rimel'
-                                className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none capitalize'
+                                className='w-full h-12 bg-secondary px-3 rounded focus:outline-none capitalize'
                             />
                         </div>
                     </div>
@@ -76,7 +76,7 @@ const Account = () => {
                             <input
                                 type="text"
                                 placeholder='rimel1111@gmail.com'
-                                className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none'
+                                className='w-full h-12 bg-secondary px-3 rounded focus:outline-none'
                             />
                         </div>
                         <div className='w-full md:w-1/2 h-full flex flex-col gap-2'>
@@ -84,7 +84,7 @@ const Account = () => {
                             <input
                                 type="text"
                                 placeholder='kingston, 5236, United State'
-                                className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none capitalize'
+                                className='w-full h-12 bg-secondary px-3 rounded focus:outline-none capitalize'
                             />
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const Account = () => {
                             <input
                                 type={showCurrentPassword ? "text" : "password"}
                                 placeholder="Current Password"
-                                className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
+                                className="w-full h-12 bg-secondary px-3 pr-10 rounded focus:outline-none"
                                 autoComplete="current-password"
                                 maxLength="128"
                                 required
@@ -127,7 +127,7 @@ const Account = () => {
                             <input
                                 type={showNewPassword ? "text" : "password"}
                                 placeholder="New Password"
-                                className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
+                                className="w-full h-12 bg-secondary px-3 pr-10 rounded focus:outline-none"
                                 autoComplete="current-password"
                                 maxLength="128"
                                 required
@@ -159,7 +159,7 @@ const Account = () => {
                             <input
                                 type={showConfirmPassword ? "text" : "password"}
                                 placeholder="Confirm Password"
-                                className="w-full h-12 bg-[#F5F5F5] px-3 pr-10 rounded focus:outline-none"
+                                className="w-full h-12 bg-secondary px-3 pr-10 rounded focus:outline-none"
                                 autoComplete="current-password"
                                 maxLength="128"
                                 required
@@ -190,8 +190,8 @@ const Account = () => {
 
                     </div>
                     <div className='w-full h-14 flex flex-row items-center justify-end gap-8'>
-                        <button className='text-base font-normal hover:text-[#DB4444]'>Cancel</button>
-                        <button className='w-40 h-10 md:w-44 md:h-12 lg:w-52 lg:h-14 bg-[#DB4444] rounded text-base font-normal text-white text-center'>
+                        <button className='text-base font-normal hover:text-primary'>Cancel</button>
+                        <button className='w-40 h-10 md:w-44 md:h-12 lg:w-52 lg:h-14 bg-primary hover:bg-hoverButton rounded text-base font-normal text-textSecondary text-center'>
                             Save Changes
                         </button>
                     </div>

@@ -37,12 +37,12 @@ const LogIn = () => {
                     {/* Buttons */}
                     <div className='w-full h-fit flex flex-row items-center justify-between'>
                         <button
-                            className='w-32 h-14 flex items-center justify-center text-white rounded-md hover:bg-[#f19393] bg-[#DB4444]'>
+                            className='w-32 h-14 flex items-center justify-center text-textSecondary rounded-md hover:bg-hoverButton bg-primary'>
                             Log In
                         </button>
                         <a
                             href="#"
-                            className='flex items-center justify-center text-[#DB4444] hover:text-black hover:scale-105 transition-transform duration-300'>
+                            className='flex items-center justify-center text-primary hover:text-black hover:scale-105 transition-transform duration-300'>
                             Forget Password?
                         </a>
                     </div>

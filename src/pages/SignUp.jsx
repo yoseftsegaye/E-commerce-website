@@ -44,7 +44,7 @@ const SignUp = () => {
                         {/* Create new account button */}
                         <div className='w-full h-fit flex flex-col gap-4'>
                             <button
-                                className='w-full h-14 flex items-center justify-center text-white rounded-md hover:bg-[#f19393] bg-[#DB4444]'>
+                                className='w-full h-14 flex items-center justify-center text-textSecondary rounded-md hover:bg-hoverButton bg-primary'>
                                 Create Account
                             </button>
                             {/* Sign up with Google */}
@@ -65,7 +65,7 @@ const SignUp = () => {
                                     <p className='text-base font-normal'>Already have account?</p>
                                     <a
                                         href="#"
-                                        className='text-base font-normal hover:text-[#DB4444] hover:scale-105 transition-transform duration-300'
+                                        className='text-base font-normal hover:text-primary hover:scale-105 transition-transform duration-300'
                                     >Log in</a>
                                 </div>
                             </div>

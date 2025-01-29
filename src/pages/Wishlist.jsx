@@ -57,7 +57,7 @@ const Wishlist = () => {
                 <div className='w-full flex flex-col items-center gap-10 md:gap-[60px]'>
                     <div className='w-full h-14 flex flex-row items-center justify-between'>
                         <h1 className='text-xl font-normal'>Wishlist()</h1>
-                        <button className='w-40 h-14 md:w-56 flex items-center justify-center rounded-md border-2 border-black hover:scale-105 hover:text-white hover:bg-[#DB4444]'>
+                        <button className='w-40 h-14 md:w-56 flex items-center justify-center rounded-md border-2 border-black hover:scale-105 hover:text-textSecondary hover:bg-primary hover:border-transparent'>
                             Move All To Bag
                         </button>
                     </div>
@@ -69,13 +69,13 @@ const Wishlist = () => {
                                 className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
 
                                 {/* Image */}
-                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-secondary group relative'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[34px] flex items-center justify-center'>
                                         <div
-                                            className={`w-full h-full flex items-center justify-center rounded-full hover:bg-[#DB4444]`}
+                                            className={`w-full h-full flex items-center justify-center rounded-full bg-white hover:bg-primary`}
                                         >
                                             <button>
                                                 <img
@@ -88,13 +88,13 @@ const Wishlist = () => {
                                     </div>
 
                                     {product.discount && (
-                                        <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
-                                            <p className='text-sm font-normal text-white'>{product.discount}</p>
+                                        <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-primary'>
+                                            <p className='text-sm font-normal text-textSecondary'>{product.discount}</p>
                                         </div>
                                     )}
 
                                     <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md transition-opacity duration-300'>
-                                        <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                        <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                             Add To Cart
                                         </button>
                                     </div>
@@ -104,7 +104,7 @@ const Wishlist = () => {
                                 <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                     <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
-                                        <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
+                                        <p className='text-base font-medium text-primary'>{product.newPrice}</p>
                                         <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
                                     </div>
                                 </div>
@@ -116,14 +116,14 @@ const Wishlist = () => {
                 <div className='w-full flex flex-col items-center gap-10 md:gap-[60px]'>
                     <div className='w-full h-14 flex flex-row items-center justify-between'>
                         <div className="flex flex-row items-center w-fit h-10 gap-4">
-                            <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
+                            <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-primary"></div>
                             <h1 className="text-base md:text-xl font-normal">Just For You</h1>
                         </div>
                         {/* Load More Button */}
                         {displayedCount < sample.length && (
                             <button
                                 onClick={handleExploreMore}
-                                className='w-24 h-14 md:w-36 flex items-center justify-center rounded-md border-2 border-black hover:scale-105 hover:text-white hover:bg-[#DB4444]'>
+                                className='w-24 h-14 md:w-36 flex items-center justify-center rounded-md border-2 border-black hover:scale-105 hover:text-textSecondary hover:bg-primary hover:border-transparent'>
                                 See All
                             </button>
                         )}
@@ -137,14 +137,14 @@ const Wishlist = () => {
                                 className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
 
                                 {/* Image */}
-                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-secondary group relative'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[34px] flex items-center justify-center'>
                                         <div
-                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[#DB4444]`}
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-primary" : "bg-white"
+                                                } hover:bg-primary`}
                                         >
                                             <button onClick={() => toggleSeen(product.id)}>
                                                 <img
@@ -157,13 +157,13 @@ const Wishlist = () => {
                                     </div>
 
                                     {product.discount && (
-                                        <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
-                                            <p className='text-sm font-normal text-white'>{product.discount}</p>
+                                        <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-primary'>
+                                            <p className='text-sm font-normal text-textSecondary'>{product.discount}</p>
                                         </div>
                                     )}
 
                                     <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md transition-opacity duration-300'>
-                                        <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                        <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                             Add To Cart
                                         </button>
                                     </div>
@@ -173,7 +173,7 @@ const Wishlist = () => {
                                 <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                     <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
-                                        <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
+                                        <p className='text-base font-medium text-primary'>{product.newPrice}</p>
                                         <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
                                     </div>
                                     <div className='flex flex-row items-center gap-2'>
@@ -196,14 +196,14 @@ const Wishlist = () => {
                                 className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
 
                                 {/* Image */}
-                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-secondary group relative'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[34px] flex items-center justify-center'>
                                         <div
-                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[#DB4444]`}
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-primary" : "bg-white"
+                                                } hover:bg-primary`}
                                         >
                                             <button onClick={() => toggleSeen(product.id)}>
                                                 <img
@@ -216,13 +216,13 @@ const Wishlist = () => {
                                     </div>
 
                                     {product.discount && (
-                                        <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
-                                            <p className='text-sm font-normal text-white'>{product.discount}</p>
+                                        <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-primary'>
+                                            <p className='text-sm font-normal text-textSecondary'>{product.discount}</p>
                                         </div>
                                     )}
 
                                     <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md transition-opacity duration-300'>
-                                        <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                        <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                             Add To Cart
                                         </button>
                                     </div>
@@ -232,7 +232,7 @@ const Wishlist = () => {
                                 <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                     <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
-                                        <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
+                                        <p className='text-base font-medium text-primary'>{product.newPrice}</p>
                                         <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
                                     </div>
                                     <div className='flex flex-row items-center gap-2'>

@@ -28,56 +28,56 @@ const CheckOut = () => {
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit relative inline-block'>
                                 <p className='text-base font-normal opacity-40'>First Name</p>
-                                <span className="absolute top-1 right-[-6px] text-red-500 text-xs">*</span>
+                                <span className="absolute top-1 right-[-6px] text-primary text-xs">*</span>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit'>
                                 <p className='text-base font-normal opacity-40'>Company Name</p>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit relative inline-block'>
                                 <p className='text-base font-normal opacity-40'>Street Address</p>
-                                <span className="absolute top-1 right-[-6px] text-red-500 text-xs">*</span>
+                                <span className="absolute top-1 right-[-6px] text-primary text-xs">*</span>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit'>
                                 <p className='text-base font-normal opacity-40'>Apartment, floor, etc. (optional)</p>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit relative inline-block'>
                                 <p className='text-base font-normal opacity-40'>Town/City</p>
-                                <span className="absolute top-1 right-[-6px] text-red-500 text-xs">*</span>
+                                <span className="absolute top-1 right-[-6px] text-primary text-xs">*</span>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit relative inline-block'>
                                 <p className='text-base font-normal opacity-40'>Phone Number</p>
-                                <span className="absolute top-1 right-[-6px] text-red-500 text-xs">*</span>
+                                <span className="absolute top-1 right-[-6px] text-primary text-xs">*</span>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                         <div className='w-full h-20 flex flex-col gap-2'>
                             <div className='w-fit h-fit relative inline-block'>
                                 <p className='text-base font-normal opacity-40'>Email Address</p>
-                                <span className="absolute top-1 right-[-6px] text-red-500 text-xs">*</span>
+                                <span className="absolute top-1 right-[-6px] text-primary text-xs">*</span>
                             </div>
-                            <input type="text" className='w-full h-12 bg-[#F5F5F5] px-3 rounded focus:outline-none' />
+                            <input type="text" className='w-full h-12 bg-secondary px-3 rounded focus:outline-none' />
                         </div>
                     </div>
                     {/* Checkbox */}
                     <div className='w-full h-6 flex flex-row items-center gap-4'>
                         <input
                             type="checkbox"
-                            className="form-checkbox w-6 h-6 accent-[#DB4444] border-gray-300 rounded"
+                            className="form-checkbox w-6 h-6 accent-primary border-gray-300 rounded"
                         />
                         <p className='text-base font-normal'>Save this information for faster check-out next time</p>
                     </div>
@@ -175,11 +175,11 @@ const CheckOut = () => {
                                 className='w-full h-full px-3'
                             />
                         </div>
-                        <button className='w-[211px] h-full bg-[#DB4444] rounded text-base font-normal text-white text-center'>
+                        <button className='w-[211px] h-full bg-primary hover:bg-hoverButton rounded text-base font-normal text-textSecondary text-center'>
                             Apply Coupon
                         </button>
                     </div>
-                    <button className='w-[190px] h-14 bg-[#DB4444] rounded text-base font-normal text-white text-center'>
+                    <button className='w-[190px] h-14 bg-primary hover:bg-hoverButton rounded text-base font-normal text-textSecondary text-center'>
                         Place Order
                     </button>
                 </div>

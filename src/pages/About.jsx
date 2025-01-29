@@ -66,11 +66,11 @@ const About = () => {
                     <button
                         key={sample.id}
                         onClick={() => setActiveLink(sample.name)}
-                        className={`min-w-[270px] h-60 flex flex-col flex-nowrap items-center justify-center border-2 border-black/30 rounded gap-6 ${activeLink === sample.name ? "bg-primary" : ""}`}>
+                        className={`min-w-[270px] h-60 flex flex-col flex-nowrap items-center justify-center border-2 border-black/30 rounded gap-6 ${activeLink === sample.name ? "bg-primary border-transparent" : ""}`}>
                         <div
                             onClick={() => handleCategoryClick(sample.name)}
                             className={`w-20 h-20 flex items-center justify-center relative`}>
-                            <div className={`absolute w-full h-full flex items-center justify-center rounded-full bg-[#2F2E30] opacity-30 ${activeLink === sample.name ? "filter invert" : ""
+                            <div className={`absolute w-full h-full flex items-center justify-center rounded-full bg-grey opacity-30 ${activeLink === sample.name ? "filter invert" : ""
                                 }`}></div>
                             <div className={`w-14 h-14 flex items-center justify-center rounded-full bg-black z-10 ${activeLink === sample.name ? "filter invert" : ""
                                 }`}>
@@ -91,7 +91,7 @@ const About = () => {
             <div className="w-full h-fit flex flex-wrap md:flex-nowrap md:flex-row items-center justify-center pr-[2%] md:pr-[5%] gap-4 lg:gap-8">
                 {/* Profile for Tom Cruise */}
                 <div className="w-[370px] h-fit flex flex-col justify-center gap-8">
-                    <div className="w-full h-[430px] flex items-end justify-center bg-[#F5F5F5]">
+                    <div className="w-full h-[430px] flex items-end justify-center bg-secondary">
                         <img src="/About/Tom.png" alt="Tom" className="w-60 h-[390px] object-contain" />
                     </div>
                     <div className="w-fit h-fit flex flex-col gap-4">
@@ -111,7 +111,7 @@ const About = () => {
 
                 {/* Profile for Emma Watson */}
                 <div className="w-[370px] h-fit flex flex-col justify-end gap-8">
-                    <div className="w-full h-[430px] flex items-end justify-center bg-[#F5F5F5]">
+                    <div className="w-full h-[430px] flex items-end justify-center bg-secondary">
                         <img src="/About/Emma.png" alt="Emma" className="w-72 h-100 object-contain" />
                     </div>
                     <div className="w-fit h-fit flex flex-col gap-4">
@@ -131,7 +131,7 @@ const About = () => {
 
                 {/* Profile for Will Smith */}
                 <div className="w-[370px] h-fit flex flex-col justify-end gap-8">
-                    <div className="w-full h-[430px] flex items-end justify-center bg-[#F5F5F5]">
+                    <div className="w-full h-[430px] flex items-end justify-center bg-secondary">
                         <img src="/About/Will.png" alt="Will" className="w-80 h-100 object-contain" />
                     </div>
                     <div className="w-fit h-fit flex flex-col gap-4">

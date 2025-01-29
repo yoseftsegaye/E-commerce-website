@@ -62,7 +62,7 @@ const Cart = () => {
                                             />
                                         </div>
                                         <div className='absolute top-0 left-0 w-6 h-6 flex items-center justify-center'>
-                                            <button className='w-[18px] h-[18px] flex items-center justify-center bg-[#DB4444] rounded-full hover:scale-110'>
+                                            <button className='w-[18px] h-[18px] flex items-center justify-center bg-primary hover:bg-hoverButton rounded-full hover:scale-110'>
                                                 <img
                                                     src='/Cancel.png'
                                                     alt='cancel'
@@ -108,7 +108,7 @@ const Cart = () => {
                                 className='w-full h-full px-3'
                             />
                         </div>
-                        <button className='w-32 md:w-40 lg:w-52 h-full bg-[#DB4444] rounded text-base font-normal text-white text-center'>
+                        <button className='w-32 md:w-40 lg:w-52 h-full bg-primary hover:bg-hoverButton rounded text-base font-normal text-white text-center'>
                             Apply Coupon
                         </button>
                     </div>
@@ -134,7 +134,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className='w-full h-14 flex items-center justify-center'>
-                                <button className='w-52 h-full bg-[#DB4444] rounded text-base font-normal text-white text-center'>
+                                <button className='w-52 h-full bg-primary hover:bg-hoverButton rounded text-base font-normal text-white text-center'>
                                     Proceed To Checkout
                                 </button>
                             </div>
