@@ -9,22 +9,23 @@ import Cart from './pages/Cart'
 import CheckOut from './pages/CheckOut';
 import Account from './pages/Account';
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <div className="h-screen flex flex-col relative">
       <Navbar />
       <div className="flex-grow">
-        {/* <Home /> */}
+        <Home />
         {/* <SignUp /> */}
         {/* <LogIn /> */}
         {/* <Wishlist /> */}
         {/* <Cart /> */}
         {/* <CheckOut /> */}
         {/* <Account /> */}
-        <About />
+        {/* <About /> */}
+        {/* <Contact /> */}
       </div>
-
       <Footer className="absolute bottom-0 left-0" />
     </div>
   );

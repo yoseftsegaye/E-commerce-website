@@ -23,7 +23,7 @@ const StarRating = ({ totalStars = 5, onRatingChange }) => {
                     onClick={() => handleClick(index)}
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill={index < rating ? "#FFAD33" : "black"}
+                    fill={index < rating ? "yellow" : "black"}
                     className={`w-5 h-5 cursor-pointer opacity-${index < rating ? '100' : '50'} transition duration-200 ease-in-out hover:scale-125`}
                 >
                     <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -110,8 +110,8 @@ const Todays = () => {
                         <div className="flex flex-row justify-start w-[270px] md:w-[450px] lg:w-[600px] relative">
                             <div className="flex flex-col justify-start gap-6 w-fit mb-2">
                                 <div className="flex flex-row items-center w-fit gap-4">
-                                    <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
-                                    <h1 className="text-sm md:text-base font-semibold text-[#DB4444]">Today's</h1>
+                                    <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-primary"></div>
+                                    <h1 className="text-sm md:text-base font-semibold text-primary">Today's</h1>
                                 </div>
                                 <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold">Flash Sales</h1>
                             </div>
@@ -125,12 +125,12 @@ const Todays = () => {
                         {/* Side arrows */}
                         <div className='absolute bottom-0 right-0 flex flex-row mb-2 w-auto gap-2'>
                             <button className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]' onClick={() => { handleScroll(-ITEM_WIDTH) }}>
-                                <div className='flex items-center justify-center w-full h-full rounded-full bg-[#F5F5F5] hover:bg-slate-300'>
+                                <div className='flex items-center justify-center w-full h-full rounded-full bg-secondary hover:bg-slate-300'>
                                     <img src="/Home/LeftArrow.png" alt="LeftArrow" className='w-3 h-2.5 md:w-4 md:h-[14px]' />
                                 </div>
                             </button>
                             <button className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]' onClick={() => { handleScroll(ITEM_WIDTH) }}>
-                                <div className='flex items-center justify-center w-full h-full rounded-full bg-[#F5F5F5] hover:bg-slate-300'>
+                                <div className='flex items-center justify-center w-full h-full rounded-full bg-secondary hover:bg-slate-300'>
                                     <img src="/Home/RightArrow.png" alt="RightArrow" className='w-3 h-2.5 md:w-4 md:h-[14px]' />
                                 </div>
                             </button>
@@ -152,14 +152,14 @@ const Todays = () => {
                                 className='w-fit h-fit flex flex-col gap-4 rounded-md'>
 
                                 {/* Image */}
-                                <div className='w-[270px] h-[250px] flex items-center justify-center bg-[#F5F5F5] rounded-md hover:scale-105 ease-in-out duration-300 relative group'>
+                                <div className='w-[270px] h-[250px] flex items-center justify-center bg-secondary rounded-md hover:scale-105 ease-in-out duration-300 relative group'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
                                         <div
-                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[rgb(219,68,68)]`}
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-primary" : "bg-white"
+                                                } hover:bg-primary`}
                                         >
                                             <button onClick={() => toggleLike(product.id)}>
                                                 <img
@@ -170,8 +170,8 @@ const Todays = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[#DB4444]`}
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-primary" : "bg-white"
+                                                } hover:bg-primary`}
                                         >
                                             <button onClick={() => toggleSeen(product.id)}>
                                                 <img
@@ -183,11 +183,11 @@ const Todays = () => {
                                         </div>
                                     </div>
                                     {/* Discount price */}
-                                    <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
-                                        <p className='text-sm font-normal text-white'>{product.discount}</p>
+                                    <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-primary'>
+                                        <p className='text-sm font-normal text-textSecondary'>{product.discount}</p>
                                     </div>
                                     <div className='absolute bottom-0 w-full h-10 bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                        <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                        <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                             Add To Cart
                                         </button>
                                     </div>
@@ -197,15 +197,15 @@ const Todays = () => {
                                 <div className='w-52 h-[84px] flex flex-col gap-2 pl-1'>
                                     <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
-                                        <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
-                                        <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
+                                        <p className='text-base font-medium text-primary'>{product.newPrice}</p>
+                                        <p className='text-base font-medium text-textPrimary opacity-50 line-through'>{product.oldPrice}</p>
                                     </div>
                                     <div className='flex flex-row items-center gap-2'>
                                         {/* Star rating */}
                                         <div className='flex flex-row items-center'>
                                             <StarRating totalStars={5} />
                                         </div>
-                                        <p className='text-sm font-semibold text-black opacity-50'> ({product.starRating}) </p>
+                                        <p className='text-sm font-semibold text-textPrimary opacity-50'> ({product.starRating}) </p>
                                     </div>
                                 </div>
                             </div>
@@ -219,14 +219,14 @@ const Todays = () => {
                         {sample.slice(0, displayedCount).map((product) => (
                             <div key={product.id} className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
                                 {/* Image */}
-                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                                <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-secondary group relative'>
                                     <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                         <img src={product.image} alt="Playstation" className='w-full h-full object-contain' />
                                     </div>
                                     <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
                                         <div
-                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[#DB4444]`}
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-primary" : "bg-white"
+                                                } hover:bg-primary`}
                                         >
                                             <button onClick={() => toggleLike(product.id)}>
                                                 <img
@@ -237,8 +237,8 @@ const Todays = () => {
                                             </button>
                                         </div>
                                         <div
-                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                                } hover:bg-[#DB4444]`}
+                                            className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-primary" : "bg-white"
+                                                } hover:bg-primary`}
                                         >
                                             <button onClick={() => toggleSeen(product.id)}>
                                                 <img
@@ -250,11 +250,11 @@ const Todays = () => {
                                         </div>
                                     </div>
                                     {/* Discount price */}
-                                    <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-[#DB4444]'>
-                                        <p className='text-sm font-normal text-white'>{product.discount}</p>
+                                    <div className='absolute top-3 left-3 w-14 h-7 flex items-center justify-center rounded-md bg-primary'>
+                                        <p className='text-sm font-normal text-textSecondary'>{product.discount}</p>
                                     </div>
                                     <div className='absolute bottom-0 w-full h-10 hidden md:flex bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                        <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                        <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                             Add To Cart
                                         </button>
                                     </div>
@@ -264,15 +264,15 @@ const Todays = () => {
                                 <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                     <a href="#" className='text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                     <div className='flex flex-row items-center gap-3'>
-                                        <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
-                                        <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
+                                        <p className='text-base font-medium text-primary'>{product.newPrice}</p>
+                                        <p className='text-base font-medium text-textPrimary opacity-50 line-through'>{product.oldPrice}</p>
                                     </div>
                                     <div className='flex flex-row items-center gap-2'>
                                         {/* Star rating */}
                                         <div className='flex flex-row items-center'>
                                             <StarRating totalStars={5} />
                                         </div>
-                                        <p className='text-sm font-semibold text-black opacity-50'> ({product.starRating}) </p>
+                                        <p className='text-sm font-semibold text-textPrimary opacity-50'> ({product.starRating}) </p>
                                     </div>
                                 </div>
                             </div>
@@ -285,7 +285,7 @@ const Todays = () => {
                     {displayedCount < sample.length && (
                         <button
                             onClick={handleExploreMore}
-                            className="w-[234px] h-14 rounded-md bg-[#DB4444] text-base font-medium text-white hover:bg-[#f19393]"
+                            className="w-[234px] h-14 rounded-md bg-primary text-base font-medium text-textSecondary hover:bg-hoverButton"
                         >
                             View All Products
                         </button>

@@ -54,8 +54,8 @@ const Catagories = () => {
         <div className='flex flex-row items-center w-full relative'>
           <div className='flex flex-col justify-start gap-2 md:gap-5 w-fit mb-2'>
             <div className="flex flex-row items-center w-fit gap-4">
-              <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
-              <h1 className="text-sm md:text-base font-semibold text-[#DB4444]">Categories</h1>
+              <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-primary"></div>
+              <h1 className="text-sm md:text-base font-semibold text-primary">Categories</h1>
             </div>
             <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold">Browse By Category</h1>
           </div>
@@ -63,12 +63,12 @@ const Catagories = () => {
           {/* Side arrows */}
           <div className='absolute bottom-0 right-0 flex flex-row mb-2 w-auto gap-2'>
             <button className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]' onClick={() => { handleScroll(-ITEM_WIDTH) }}>
-              <div className='flex items-center justify-center w-full h-full rounded-full bg-[#F5F5F5] hover:bg-slate-300'>
+              <div className='flex items-center justify-center w-full h-full rounded-full bg-secondary hover:bg-slate-300'>
                 <img src="/Home/LeftArrow.png" alt="LeftArrow" className='w-3 h-2.5 md:w-4 md:h-[14px]' />
               </div>
             </button>
             <button className='flex items-center justify-center w-6 h-6 md:w-9 md:h-9 lg:w-[46px] lg:h-[46px]' onClick={() => { handleScroll(ITEM_WIDTH) }}>
-              <div className='flex items-center justify-center w-full h-full rounded-full bg-[#F5F5F5] hover:bg-slate-300'>
+              <div className='flex items-center justify-center w-full h-full rounded-full bg-secondary hover:bg-slate-300'>
                 <img src="/Home/RightArrow.png" alt="RightArrow" className='w-3 h-2.5 md:w-4 md:h-[14px]' />
               </div>
             </button>
@@ -94,7 +94,7 @@ const Catagories = () => {
                 href="#"
                 key={catagory.id}
                 onClick={() => setActiveLink(catagory.name)}
-                className={`min-w-[170px] h-[145px] flex flex-col items-center justify-center gap-2 border-4 rounded-md hover:bg-[#DB4444] ${activeLink === catagory.name ? "bg-[#DB4444]" : ""}`}>
+                className={`min-w-[170px] h-[145px] flex flex-col items-center justify-center gap-2 border-4 rounded-md hover:bg-primary ${activeLink === catagory.name ? "bg-primary" : ""}`}>
                 <div className={`w-14 h-14 flex items-center justify-center`} onClick={() => handleCategoryClick(catagory.name)}>
                   <img
                     src={catagory.image}

@@ -36,19 +36,19 @@ const CountdownTimer = () => {
     const renderer = ({ days, hours, minutes, seconds }) => {
         return (
             <div className="w-f-t h-fit flex flex-row justify-center gap-3 md:gap-4 lg:gap-6">
-                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-white md:text-black">
+                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-textSecondary md:text-textPrimary">
                     <p className='text-sm md:text-[14px] lg:text-base font-semibold'>{days.toString().padStart(2, '0')}</p>
                     <p className='text-[10px] md:text-sm font-normal'>Days</p>
                 </div>
-                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-white md:text-black">
+                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-textSecondary md:text-textPrimary">
                     <p className='text-sm md:text-[14px] lg:text-base font-semibold'>{hours.toString().padStart(2, '0')}</p>
                     <p className='text-[11px] font-normal'>Hours</p>
                 </div>
-                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-white md:text-black">
+                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-textSecondary md:text-textPrimary">
                     <p className='text-sm md:text-[14px] lg:text-base font-semibold'>{minutes.toString().padStart(2, '0')}</p>
                     <p className='text-[11px] font-normal'>Minutes</p>
                 </div>
-                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-white md:text-black">
+                <div className="w-8 h-8 md:w-12 md:h-12 lg:w-[62px] lg:h-[62px] md:rounded-full md:bg-white flex flex-col items-center justify-center gap-0.5 text-textSecondary md:text-textPrimary">
                     <p className='text-sm md:text-[14px] lg:text-base font-semibold'>{seconds.toString().padStart(2, '0')}</p>
                     <p className='text-[11px] font-normal'>Seconds</p>
                 </div>
@@ -94,8 +94,8 @@ const ThisMonth = () => {
                 <div className='flex flex-row items-center w-full relative'>
                     <div className='flex flex-col justify-start gap-2 md:gap-5 w-fit mb-2'>
                         <div className="flex flex-row items-center w-fit gap-4">
-                            <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
-                            <h1 className="text-sm md:text-base font-semibold text-[#DB4444]">This Month</h1>
+                            <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-primary"></div>
+                            <h1 className="text-sm md:text-base font-semibold text-primary">This Month</h1>
                         </div>
                         <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold">Best Selling Products</h1>
                     </div>
@@ -105,8 +105,8 @@ const ThisMonth = () => {
                         {displayedCount < sample.length && (
                             <button
                                 onClick={handleExploreMore}
-                                className='flex items-center justify-center w-24 h-10 md:w-32 md:h-12 lg:w-40 lg:h-14 rounded-md bg-[#DB4444] hover:bg-[#f19393]'>
-                                <p className='text-base font-medium text-white'>View All</p>
+                                className='flex items-center justify-center w-24 h-10 md:w-32 md:h-12 lg:w-40 lg:h-14 rounded-md bg-primary hover:bg-hoverButton'>
+                                <p className='text-base font-medium text-textSecondary'>View All</p>
                             </button>
                         )}
                     </div>
@@ -120,14 +120,14 @@ const ThisMonth = () => {
                             className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
 
                             {/* Image */}
-                            <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                            <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-secondary group relative'>
                                 <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                     <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                 </div>
                                 <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
                                     <div
-                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                            } hover:bg-[#DB4444]`}
+                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-primary" : "bg-white"
+                                            } hover:bg-primary`}
                                     >
                                         <button onClick={() => toggleLike(product.id)}>
                                             <img
@@ -138,8 +138,8 @@ const ThisMonth = () => {
                                         </button>
                                     </div>
                                     <div
-                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                            } hover:bg-[#DB4444]`}
+                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-primary" : "bg-white"
+                                            } hover:bg-primary`}
                                     >
                                         <button onClick={() => toggleSeen(product.id)}>
                                             <img
@@ -152,7 +152,7 @@ const ThisMonth = () => {
 
                                 </div>
                                 <div className='absolute bottom-0 w-full h-10 hidden md:flex bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                    <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                    <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                         Add To Cart
                                     </button>
                                 </div>
@@ -162,15 +162,15 @@ const ThisMonth = () => {
                             <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                 <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                 <div className='flex flex-row items-center gap-3'>
-                                    <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
-                                    <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
+                                    <p className='text-base font-medium text'>{product.newPrice}</p>
+                                    <p className='text-base font-medium text-textPrimary opacity-50 line-through'>{product.oldPrice}</p>
                                 </div>
                                 <div className='flex flex-row items-center gap-2'>
                                     {/* Star rating */}
                                     <div className='flex flex-row items-center'>
                                         <StarRating totalStars={5} />
                                     </div>
-                                    <p className='text-sm font-semibold text-black opacity-50'> ({product.starRating}) </p>
+                                    <p className='text-sm font-semibold text-textPrimary opacity-50'> ({product.starRating}) </p>
                                 </div>
                             </div>
                         </div>
@@ -182,14 +182,14 @@ const ThisMonth = () => {
                     {sample.slice(0, displayedCount).map((product) => (
                         <div key={product.id} className='w-fit h-fit flex flex-row md:flex-col gap-4 rounded-md'>
                             {/* Image */}
-                            <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-[#F5F5F5] group relative'>
+                            <div className='min-w-[220px] h-[250px] md:w-[270px] flex items-center justify-center rounded-md hover:scale-105 ease-in-out duration-300 bg-secondary group relative'>
                                 <div className='w-[180px] h-[170px] flex items-center justify-center'>
                                     <img src={product.image} alt={product.image} className='w-full h-full object-contain' />
                                 </div>
                                 <div className='absolute top-3 right-3 w-[34px] h-[76px] flex flex-col items-center justify-center gap-2'>
                                     <div
-                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                            } hover:bg-[#DB4444]`}
+                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${likedProduct[product.id] ? "bg-primary" : "bg-white"
+                                            } hover:bg-primary`}
                                     >
                                         <button onClick={() => toggleLike(product.id)}>
                                             <img
@@ -200,8 +200,8 @@ const ThisMonth = () => {
                                         </button>
                                     </div>
                                     <div
-                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-[#DB4444]" : "bg-white"
-                                            } hover:bg-[#DB4444]`}
+                                        className={`w-[34px] h-[34px] flex items-center justify-center rounded-full ${seenProduct[product.id] ? "bg-primary" : "bg-white"
+                                            } hover:bg-primary`}
                                     >
                                         <button onClick={() => toggleSeen(product.id)}>
                                             <img
@@ -214,7 +214,7 @@ const ThisMonth = () => {
 
                                 </div>
                                 <div className='absolute bottom-0 w-full h-10 hidden md:flex bg-black rounded-b-md opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                    <button className='w-full h-full text-base font-medium text-white cursor-pointer'>
+                                    <button className='w-full h-full text-base font-medium text-textSecondary cursor-pointer'>
                                         Add To Cart
                                     </button>
                                 </div>
@@ -224,15 +224,15 @@ const ThisMonth = () => {
                             <div className='w-fit h-fit flex flex-col gap-2 pl-1'>
                                 <a href="#" className='w-fit text-base font-medium hover:scale-105 hover:underline duration-300'>{product.name}</a>
                                 <div className='flex flex-row justify-center gap-2'>
-                                    <p className='text-base font-medium text-[#DB4444]'>{product.newPrice}</p>
-                                    <p className='text-base font-medium text-black opacity-50 line-through'>{product.oldPrice}</p>
+                                    <p className='text-base font-medium text'>{product.newPrice}</p>
+                                    <p className='text-base font-medium text-textPrimary opacity-50 line-through'>{product.oldPrice}</p>
                                 </div>
                                 <div className='flex flex-row items-center gap-2 mb-5'>
                                     {/* Star rating */}
                                     <div className='flex flex-row items-center'>
                                         <StarRating totalStars={5} />
                                     </div>
-                                    <p className='text-sm font-semibold text-black opacity-50'> ({product.starRating}) </p>
+                                    <p className='text-sm font-semibold text-textPrimary opacity-50'> ({product.starRating}) </p>
                                 </div>
                             </div>
                         </div>
@@ -244,8 +244,8 @@ const ThisMonth = () => {
             <div className='w-full fit bg-black flex flex-row items-center justify-between px-[5%] py-[5%]'>
                 {/* Message */}
                 <div className='flex flex-col gap-8'>
-                    <p className='taxt-base font-medium text-[#00FF66]'>Catagories</p>
-                    <div className='w-[170px] md:w-[300px] lg:w-[400px] text-xl md:text-4xl lg:text-5xl font-semibold text-white'>
+                    <p className='taxt-base font-medium text-buttonSecondary'>Catagories</p>
+                    <div className='w-[170px] md:w-[300px] lg:w-[400px] text-xl md:text-4xl lg:text-5xl font-semibold text-textSecondary'>
                         <p className='leading-tight'> Enhance Your Music Experience</p>
                     </div>
                     <div className='w-fit h-fit'>
@@ -253,7 +253,7 @@ const ThisMonth = () => {
                     </div>
                     <a
                         href='#'
-                        className='w-28 h-10 md:w-36 md:h-12 lg:w-[171px] lg:h-14 flex items-center justify-center rounded-sm bg-[#00FF66] text-white hover:bg-[#78f5aa] hover:text-black'>
+                        className='w-28 h-10 md:w-36 md:h-12 lg:w-[171px] lg:h-14 flex items-center justify-center rounded-sm bg-buttonSecondary text-textSecondary hover:bg-[#78f5aa] hover:text-textPrimary'>
                         Buy Now
                     </a>
                 </div>

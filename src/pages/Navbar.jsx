@@ -28,13 +28,13 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <div className='w-fit'>
-                        <h1 className="font-bold text-xl md:text-2xl transition-transform hover:scale-105">Exclusive</h1>
+                        <h1 className="font-bold text-xl md:text-2xl hover:scale-105 transition-transform duration-300 ">Exclusive</h1>
                     </div>
 
                     {/* Link for large screen */}
                     <div className="hidden lg:flex justify-end gap-10">
                         {links.map((link) => (
-                            <div key={link.id} className="w-auto px-1 hover:text-[#DB4444] hover:scale-110 transition-transform duration-300">
+                            <div key={link.id} className="w-auto px-1 hover:text-primary hover:scale-110 transition-transform duration-300">
                                 <a
                                     href={link.href}
                                     className="text-base font-normal"
@@ -56,12 +56,12 @@ const Navbar = () => {
                 <div className='flex flex-row justify-center items-center w-[70%] lg:w-[40%] h-10 gap-[5%]'>
 
                     {/* Search section */}
-                    <div className='flex items-center justify-center w-full rounded bg-slate-100 h-full pl-3 md:pl-5 pr-10 py-2 relative'>
+                    <div className='flex items-center justify-center w-full rounded bg-secondary h-full pl-3 md:pl-5 pr-10 py-2 relative'>
                         <div className='flex flex-row items-center w-full h-full relative'>
                             <input
                                 type="text"
                                 placeholder='What are you looking for?'
-                                className='text-sm font-normal bg-slate-100 w-full h-full outline-none  placeholder-ellipsis'
+                                className='text-sm font-normal bg-secondary w-full h-full outline-none  placeholder-ellipsis'
                             />
                         </div>
 
@@ -78,17 +78,17 @@ const Navbar = () => {
 
                     {/* Button section */}
                     <div className='flex flex-row justify-center items-center w-[88px] md:w-[120px] h-8 md:gap-2 relative'>
-                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 mb-2 ${likeClicked ? "bg-[#DB4444]" : "bg-white"}`}>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${likeClicked ? "bg-primary" : "bg-white"}`}>
                             <button onClick={() => setLikeClicked(!likeClicked)}>
                                 <img src="/Navbar/Like.png" alt="Like" className={`w-5 h-5 object-contain hover:scale-125 transition-transform duration-300 ${likeClicked ? "filter invert" : ""}`} />
                             </button>
                         </div>
-                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${cartClicked ? "bg-[#DB4444]" : "bg-white"}`}>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${cartClicked ? "bg-primary" : "bg-white"}`}>
                             <button onClick={() => setCartClicked(!cartClicked)}>
                                 <img src="/Navbar/Cart.png" alt="Cart" className={`w-5 h-5 object-contain hover:scale-125 transition-transform duration-300 ${cartClicked ? "filter invert" : ""}`} />
                             </button>
                         </div>
-                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${profileClicked ? "bg-[#DB4444]" : "bg-white"}`}>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full mb-2 ${profileClicked ? "bg-primary" : "bg-white"}`}>
                             <button onClick={() => setProfileClicked(!profileClicked)}>
                                 <img src="/Navbar/User.png" alt="User" className={`w-5 h-5 object-contain hover:scale-125 transition-transform duration-300 ${profileClicked ? "filter invert" : ""}`} />
                             </button>
@@ -102,31 +102,31 @@ const Navbar = () => {
                                         <img src="/Account-DropDown/User.png" alt="User" className='w-6 h-6 object-contain' />
                                         <a
                                             href="#"
-                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>Manage My Account</a>
+                                            className='text-sm font-normal text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>Manage My Account</a>
                                     </div>
                                     <div className='w-fit h-8 flex flex-row items-center gap-4'>
                                         <img src="/Account-DropDown/Order.png" alt="Order" className='w-6 h-6 object-contain' />
                                         <a
                                             href="#"
-                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>My Order</a>
+                                            className='text-sm font-normal text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>My Order</a>
                                     </div>
                                     <div className='w-fit h-8 flex flex-row items-center gap-4'>
                                         <img src="/Account-DropDown/Cancel.png" alt="Cancel" className='w-6 h-6 object-contain' />
                                         <a
                                             href="#"
-                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>My Cancellations</a>
+                                            className='text-sm font-normal text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>My Cancellations</a>
                                     </div>
                                     <div className='w-fit h-8 flex flex-row items-center gap-4'>
                                         <img src="/Account-DropDown/Reviews.png" alt="Reviews" className='w-6 h-6 object-contain' />
                                         <a
                                             href="#"
-                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>My Reviews</a>
+                                            className='text-sm font-normal text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>My Reviews</a>
                                     </div>
                                     <div className='w-fit h-8 flex flex-row items-center gap-4'>
                                         <img src="/Account-DropDown/Logout.png" alt="Logout" className='w-6 h-6 object-contain' />
                                         <a
                                             href="#"
-                                            className='text-sm font-normal text-white hover:text-black hover:scale-110 transition-transform duration-300'>Logout</a>
+                                            className='text-sm font-normal text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>Logout</a>
                                     </div>
                                 </div>
                             </div>
@@ -155,17 +155,17 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 h-screen w-1/2 md:w-1/3 bg-gradient-to-r bg-white text-black shadow-md pt-10 z-[1001] transition-transform transform duration-500 ${open ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 right-0 h-screen w-1/2 md:w-1/3 bg-gradient-to-r bg-white text-textPrimary shadow-md pt-10 z-[1001] transition-transform transform duration-500 ${open ? 'translate-x-0' : 'translate-x-full'
                     } lg:hidden`}
             >
                 <div className="flex items-center justify-center w-full mb-10 pl-0">
                     <h1 className="font-bold text-xl md:text-2xl transition-transform hover:scale-105">Exclusive</h1>
                 </div>
                 <div className='flex flex-col items-start px-10 py-10 font-medium text-lg gap-6'>
-                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">Home</a>
-                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">Contact</a>
-                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">About</a>
-                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-[#DB4444]">Sign Up</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-primary">Home</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-primary">Contact</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-primary">About</a>
+                    <a href="/" className="transition-transform duration-300 hover:scale-110 hover:text-primary">Sign Up</a>
                 </div>
             </div>
         </nav>

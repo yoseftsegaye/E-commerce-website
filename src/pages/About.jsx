@@ -66,7 +66,7 @@ const About = () => {
                     <button
                         key={sample.id}
                         onClick={() => setActiveLink(sample.name)}
-                        className={`min-w-[270px] h-60 flex flex-col flex-nowrap items-center justify-center border-2 border-black/30 rounded gap-6 ${activeLink === sample.name ? "bg-[#DB4444]" : ""}`}>
+                        className={`min-w-[270px] h-60 flex flex-col flex-nowrap items-center justify-center border-2 border-black/30 rounded gap-6 ${activeLink === sample.name ? "bg-primary" : ""}`}>
                         <div
                             onClick={() => handleCategoryClick(sample.name)}
                             className={`w-20 h-20 flex items-center justify-center relative`}>

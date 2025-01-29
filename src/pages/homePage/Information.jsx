@@ -7,7 +7,7 @@ const Information = () => {
                 {/* Contents */}
                 <div className='min-w-[249px] h-fit flex flex-col flex-nowrap items-center justify-center gap-6'>
                     <div className='w-20 h-20 flex items-center justify-center relative'>
-                        <div className='absolute w-full h-full flex items-center justify-center rounded-full bg-[#2F2E30] opacity-30'></div>
+                        <div className='absolute w-full h-full flex items-center justify-center rounded-full bg-grey opacity-30'></div>
                         <div className='w-[58px] h-[58px] flex items-center justify-center rounded-full bg-black'>
                             <img src="/Information/Delivery.png" alt="Delivery" className='w-10 h-10 object-contain' />
                         </div>
@@ -19,7 +19,7 @@ const Information = () => {
                 </div>
                 <div className='min-w-[249px] h-fit flex flex-col flex-nowrap items-center justify-center gap-6'>
                     <div className='w-20 h-20 flex items-center justify-center relative'>
-                        <div className='absolute w-full h-full flex items-center justify-center rounded-full bg-[#2F2E30] opacity-30'></div>
+                        <div className='absolute w-full h-full flex items-center justify-center rounded-full bg-grey opacity-30'></div>
                         <div className='w-[58px] h-[58px] flex items-center justify-center rounded-full bg-black'>
                             <img src="/Information/Customer-service.png" alt="Customer-service" className='w-10 h-10 object-contain' />
                         </div>
@@ -31,7 +31,7 @@ const Information = () => {
                 </div>
                 <div className='min-w-[249px] h-fit flex flex-col flex-nowrap items-center justify-center gap-6'>
                     <div className='w-20 h-20 flex items-center justify-center relative'>
-                        <div className='absolute w-full h-full flex items-center justify-center rounded-full bg-[#2F2E30] opacity-30'></div>
+                        <div className='absolute w-full h-full flex items-center justify-center rounded-full bg-grey opacity-30'></div>
                         <div className='w-[58px] h-[58px] flex items-center justify-center rounded-full bg-black'>
                             <img src="/Information/Secure.png" alt="Guarante" className='w-10 h-10 object-contain' />
                         </div>

@@ -8,8 +8,8 @@ const Featured = () => {
                 <div className='flex flex-row items-center w-full relative'>
                     <div className='flex flex-col justify-start gap-2 md:gap-5 w-fit mb-2'>
                         <div className="flex flex-row items-center w-fit gap-4">
-                            <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-[#DB4444]"></div>
-                            <h1 className="text-sm md:text-base font-semibold text-[#DB4444]">Featured</h1>
+                            <div className="w-3 h-6 md:w-4 md:h-8 lg:w-5 lg:h-10 rounded bg-primary"></div>
+                            <h1 className="text-sm md:text-base font-semibold text-primary">Featured</h1>
                         </div>
                         <h1 className="text-lg md:text-2xl lg:text-4xl font-semibold">New Arrival</h1>
                     </div>
@@ -24,12 +24,12 @@ const Featured = () => {
                             {/* Detail */}
                             <div className='absolute bottom-4 md:bottom-10 left-0 w-fit h-fit flex flex-col gap-2 md:gap-4'>
                                 <div className='w-44 md:w-[242px] h-fit flex flex-col gap-2 md:gap-4'>
-                                    <h1 className='text-lg md:text-2xl font-semibold text-white hover:scale-110 transition-transform duration-300'>PlayStation 5</h1>
-                                    <p className='text-xs md:text-sm font-normal text-white leading-tight hover:scale-110 transition-transform duration-300'>Black and white version of the PS5 coming out on sale</p>
+                                    <h1 className='text-lg md:text-2xl font-semibold text-textSecondary hover:scale-110 transition-transform duration-300'>PlayStation 5</h1>
+                                    <p className='text-xs md:text-sm font-normal text-textSecondary leading-tight hover:scale-110 transition-transform duration-300'>Black and white version of the PS5 coming out on sale</p>
                                 </div>
                                 <a
                                     href='#'
-                                    className='w-fit h-fit text-sm md:text-base font-medium text-white hover:text-[#DB4444] hover:scale-110 transition-transform duration-300'>
+                                    className='w-fit h-fit text-sm md:text-base font-medium text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>
                                     Shop Now
                                     <div className='w-auto h-[2px] bg-white rounded-md'></div>
                                 </a>
@@ -48,16 +48,16 @@ const Featured = () => {
                             </div>
                             <div className='absolute bottom-3 left-3 md:bottom-6 md:left-6 w-fit h-fit flex flex-col gap-1 md:gap-2'>
                                 <div className='w-44 md:w-[230px] h-fit flex flex-col md:gap-2'>
-                                    <h1 className='text-sm md:text-xl font-semibold text-white hover:scale-110 transition-transform duration-300'>
+                                    <h1 className='text-sm md:text-xl font-semibold text-textSecondary hover:scale-110 transition-transform duration-300'>
                                         Women's Collections 5
                                     </h1>
-                                    <p className='hidden md:flex text-[10px] md:text-sm font-normal text-white leading-tight hover:scale-110 transition-transform duration-300'>
+                                    <p className='hidden md:flex text-[10px] md:text-sm font-normal text-textSecondary leading-tight hover:scale-110 transition-transform duration-300'>
                                         Featured women collections that give you another vibe
                                     </p>
                                 </div>
                                 <a
                                     href='#'
-                                    className='w-fit h-fit text-sm md:text-base font-medium text-white hover:text-[#DB4444] hover:scale-110 transition-transform duration-300'>
+                                    className='w-fit h-fit text-sm md:text-base font-medium text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>
                                     Shop Now
                                     <div className='w-auto h-[2px] bg-white rounded-md'></div>
                                 </a>
@@ -70,12 +70,12 @@ const Featured = () => {
                                 <div className="absolute top-0 right-0 w-full h-full rounded-full bg-[#D9D9D9] blur-[100px] opacity-30 z-2"></div>
                                 <div className='absolute bottom-1 left-1 md:bottom-3 md:left-3 lg:bottom-6 lg:left-6  w-fit h-fit flex flex-col gap-[2px] md:gap-2 z-20'>
                                     <div className='w-44 md:w-[230px] h-fit flex flex-col lg:gap-2'>
-                                        <h1 className='text-sm md:text-xl font-semibold text-white hover:scale-110 transition-transform duration-300'>Speakers</h1>
-                                        <p className='hidden md:flex text-xs md:text-sm font-normal text-white leading-tight hover:scale-110 transition-transform duration-300'>Amazon wireless speakers</p>
+                                        <h1 className='text-sm md:text-xl font-semibold text-textSecondary hover:scale-110 transition-transform duration-300'>Speakers</h1>
+                                        <p className='hidden md:flex text-xs md:text-sm font-normal text-textSecondary leading-tight hover:scale-110 transition-transform duration-300'>Amazon wireless speakers</p>
                                     </div>
                                     <a
                                         href='#'
-                                        className='w-fit h-fit text-sm md:text-base font-medium text-white hover:text-[#DB4444] hover:scale-110 transition-transform duration-300'>
+                                        className='w-fit h-fit text-sm md:text-base font-medium text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>
                                         Shop Now
                                         <div className='w-auto h-[2px] bg-white rounded-md'></div>
                                     </a>
@@ -86,12 +86,12 @@ const Featured = () => {
                                 <div className="absolute top-0 right-0 w-full h-full rounded-full bg-[#D9D9D9] blur-[100px] opacity-30 z-0"></div>
                                 <div className='absolute bottom-1 left-1 md:bottom-3 md:left-3 lg:bottom-6 lg:left-6  w-fit h-fit flex flex-col gap-[2px] md:gap-2 z-20'>
                                     <div className='w-44 md:w-[230px] h-fit flex flex-col lg:gap-2'>
-                                        <h1 className='text-sm md:text-xl font-semibold text-white hover:scale-110 transition-transform duration-300'>Perfume</h1>
-                                        <p className='hidden md:flex text-xs md:text-sm font-normal text-white leading-tight hover:scale-110 transition-transform duration-300'>GUCCI INTENSE OUD EDP</p>
+                                        <h1 className='text-sm md:text-xl font-semibold text-textSecondary hover:scale-110 transition-transform duration-300'>Perfume</h1>
+                                        <p className='hidden md:flex text-xs md:text-sm font-normal text-textSecondary leading-tight hover:scale-110 transition-transform duration-300'>GUCCI INTENSE OUD EDP</p>
                                     </div>
                                     <a
                                         href='#'
-                                        className='w-fit h-fit text-sm md:text-base font-medium text-white hover:text-[#DB4444] hover:scale-110 transition-transform duration-300'>
+                                        className='w-fit h-fit text-sm md:text-base font-medium text-textSecondary hover:text-primary hover:scale-110 transition-transform duration-300'>
                                         Shop Now
                                         <div className='w-auto h-[2px] bg-white rounded-md'></div>
                                     </a>
