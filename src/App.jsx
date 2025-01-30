@@ -10,6 +10,8 @@ import CheckOut from './pages/CheckOut';
 import Account from './pages/Account';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import NoMatch from './pages/NoMatch';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
         {/* <CheckOut /> */}
         {/* <Account /> */}
         {/* <About /> */}
-        <Contact />
+        {/* <Contact /> */}
+        {/* <NoMatch /> */}
+        <ProductDetail />
       </div>
       <Footer className="absolute bottom-0 left-0" />
     </div>

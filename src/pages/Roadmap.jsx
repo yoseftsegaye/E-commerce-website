@@ -146,3 +146,31 @@ export const CheckoutMap = () => {
         </div>
     );
 };
+
+// Exported ProductDetailMap Component
+export const ProductDetailMap = () => {
+    return (
+        <div className='w-fit h-5 flex flex-row items-center justify-center gap-3'>
+            <a
+                className='text-sm font-normal opacity-50 hover:scale-110 transition-transform duration-300'
+                href="#"
+            >
+                Account
+            </a>
+            <div>/</div>
+            <a
+                className='text-sm font-normal opacity-50 hover:scale-110 transition-transform duration-300'
+                href="#"
+            >
+                Gaming
+            </a>
+            <div>/</div>
+            <a
+                className='text-sm font-normal hover:scale-110 transition-transform duration-300'
+                href="#"
+            >
+                Havic HV G-92 Gamepad
+            </a>
+        </div>
+    );
+};
